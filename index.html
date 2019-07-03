@@ -1,10 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Fonetikas</title>
+    <meta charset="utf-8" />
+    <!--Viewport meta tag allows us to control the viewport’s size and scale.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--CSS, reset, normalize, main-->
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="wrapper">
+      <!--PROGRESS-->
+      <div id="progress">
+        <div>
+          <!--growing line-->
+          <div class="line">"growing line"</div>
+          <!--lesson 1 unit 1 from 10, in text-->
+          <div class="unit">
+            <span>"Lesson 1, unit 1 from 10"</span>
+          </div>
+        </div>
+      </div>
+      <div class="lila"></div>
+      <!--MAIN-->
+      <div id="main">
+        <!--title-->
+        <div class="title">
+          <span>"¡Haz click en el ícono para escuchar el audio!"</span>
+        </div>
+        <!--words introduction-->
+        <div class="words">
+          <div class="base-language">
+            <span id="native-language">"word-SP"</span>
+          </div>
+          <div class="equal">
+            <span>=</span>
+          </div>
+          <div class="target-language">
+            <a href="#"><img src="img/I-yellow.png" alt=""/></a>
+          </div>
+        </div>
+        <!--hints-->
+        <div class="hints">
+          <!--pics or text or audio-->
+          <div>"additional info"</div>
+        </div>
+        <!--task-->
+        <div class="task">
+          <div class="question">
+            <span>¿Cuál de las tres opciones es la pronuncación correcta?</span>
+          </div>
+          <div class="options">
+            <div class="option-a margin-l-r">
+              <a href="#"><img src="./img/110x70.png" alt=""/></a>
+            </div>
+            <div class="option-b margin-l-r">
+              <a href="#"><img src="./img/110x70.png" alt=""/></a>
+            </div>
+            <div class="option-c margin-l-r">
+              <a href="#"><img src="./img/110x70.png" alt=""/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lila"></div>
+      <!--CHECK, PAUSE, BACK TO LANDING PAGE-->
+      <div id="bottom">
+        <div class="check margin-l-r">
+          <button class="btn-check">check</button>
+        </div>
+        <div class="pause margin-l-r">
+          <button class="btn-pause">pause</button>
+        </div>
+        <div class="choose-language margin-l-r">
+          <button class="choose-language">Choose another language</button>
+        </div>
+      </div>
+    </div>
+    <!--<script src="./js/defaultSpanish.js"></script>
+    <script src="./js/defaultGerman.js"></script>
+    <script src="./js/spanishVocab.js"></script>
+    <script src="./js/germanVocab.js"></script>
+    <script src="./js/spanishGerman.js"></script>-->
+    <script src="./js/word.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
 </html>
