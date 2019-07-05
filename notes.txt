@@ -1,0 +1,7 @@
+Framework of a language:
+... > Indoeuropean Languages > Latin Languages > Spanish, French, Italian, etc
+
+Framework of Spanish - structure of the Spanish language: const Spanish = {}
+
+>>1.1. parts of speech - all come from class WORD
+>>1.1.6.1.3.3. Third-person neuter/inanimate singular = does not exist

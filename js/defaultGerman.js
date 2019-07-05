@@ -1,44 +1,47 @@
-const defaultGerman = {
-  morphology: {
-    partsOfSpeech: [
-      {
-        noun: [{}],
-        verb: [{ auxiliaryVerb: [{ sein: [bin, bist, ist] }] }],
-        adjective: [{}],
-        adverb: [
-          { locativeAdverb: [hier, dort] },
-          { conjunctiveAdverb: [auch] },
-          { negativeAdverb: [nicht] }
-        ],
-        article: [{}],
-        pronoun: [
-          {
-            personalPronoun: [
-              { firstPersonSingular: ich },
-              { secondPersonSingular: du },
-              {
-                thirdPersonSingular: [{ masculine: er }, { feminine: sie }]
-              },
-              { firstPersonPlural: "" },
-              { secondPersonPlural: "" },
-              { thirdPersonPlural: "" }
-            ]
-          }
-        ],
-        preposition: [{}],
-        conjunction: [
-          { copulativeConjunction: [und] },
-          { adversativeConjunction: [aber] },
-          { disjunctiveConjunctions: [oder] }
-        ],
-        numeral: [{}],
-        interjection: [hallo],
-        particle: [ja, nein]
-      }
-    ]
-  },
-  phoneticsPhonology: {},
-  semantics: {},
-  syntax: {},
-  graphemics: {}
-};
+// const defaultGerman = {
+//   morphology: {
+//     partsOfSpeech: [
+//       {
+//         noun: [{}],
+//         verb: [{ auxiliaryVerb: [{ sein: [binGer, bistGer, istGer] }] }],
+//         adjective: [{}],
+//         adverb: [
+//           { locativeAdverb: [hierGer, dortGer] },
+//           { conjunctiveAdverb: [auchGer] },
+//           { negativeAdverb: [nichtGer] }
+//         ],
+//         article: [{}],
+//         pronoun: [
+//           {
+//             personalPronoun: [
+//               { firstPersonSingular: ichGer },
+//               { secondPersonSingular: duGer },
+//               {
+//                 thirdPersonSingular: [
+//                   { masculine: erGer },
+//                   { feminine: sieGer }
+//                 ]
+//               },
+//               { firstPersonPlural: "" },
+//               { secondPersonPlural: "" },
+//               { thirdPersonPlural: "" }
+//             ]
+//           }
+//         ],
+//         preposition: [{}],
+//         conjunction: [
+//           { copulativeConjunction: [undGer] },
+//           { adversativeConjunction: [aberGer] },
+//           { disjunctiveConjunctions: [oderGer] }
+//         ],
+//         numeral: [{}],
+//         interjection: [halloGer],
+//         particle: [jaGer, neinGer]
+//       }
+//     ]
+//   },
+//   phoneticsPhonology: {},
+//   semantics: {},
+//   syntax: {},
+//   graphemics: {}
+// };

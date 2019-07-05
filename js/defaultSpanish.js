@@ -1,48 +1,51 @@
-const defaultSpanish = {
-  morphology: {
-    partsOfSpeech: [
-      {
-        noun: [{}],
-        verb: [
-          {
-            auxiliaryVerb: [{ estar: [estoy, estás, está] }]
-          }
-        ],
-        adjective: [{}],
-        adverb: [{}],
-        article: [{}],
-        pronoun: [
-          {
-            personalPronoun: [
-              { firstPersonSingular: yo },
-              { secondPersonSingular: tú },
-              {
-                thirdPersonSingular: [{ masculine: él }, { feminine: ella }]
-              },
-              { firstPersonPlural: "" },
-              { secondPersonPlural: "" },
-              { thirdPersonPlural: "" }
-            ]
-          }
-        ],
-        preposition: [{}],
-        conjunction: [{}],
-        numeral: [{}],
-        interjection: [{}],
-        particle: [sí, no]
-      }
-    ]
-  },
-  phoneticsPhonology: {},
-  semantics: {},
-  syntax: {},
-  graphemics: {}
-};
+// const defaultSpanish = {
+//   morphology: {
+//     partsOfSpeech: [
+//       {
+//         noun: [{}],
+//         verb: [
+//           {
+//             auxiliaryVerb: [{ estar: [estoySpa, estasSpa, estaSpa] }]
+//           }
+//         ],
+//         adjective: [{}],
+//         adverb: [{}],
+//         article: [{}],
+//         pronoun: [
+//           {
+//             personalPronoun: [
+//               { firstPersonSingular: yoSpa },
+//               { secondPersonSingular: tuSpa },
+//               {
+//                 thirdPersonSingular: [
+//                   { masculine: elSpa },
+//                   { feminine: ellaSpa }
+//                 ]
+//               },
+//               { firstPersonPlural: "" },
+//               { secondPersonPlural: "" },
+//               { thirdPersonPlural: "" }
+//             ]
+//           }
+//         ],
+//         preposition: [{}],
+//         conjunction: [{}],
+//         numeral: [{}],
+//         interjection: [{}],
+//         particle: [siSpa, noSpa]
+//       }
+//     ]
+//   },
+//   phoneticsPhonology: {},
+//   semantics: {},
+//   syntax: {},
+//   graphemics: {}
+// };
 
-/* 
-console.log(
-  defaultSpanish.morphology.partsOfSpeech[0].pronoun[0].personalPronoun[0]
-    .firstPersonSingular.text
-);
-// output: "yo"
-*/
+// /*
+// console.log(
+//   defaultSpanish.morphology.partsOfSpeech[0].pronoun[0].personalPronoun[0]
+//     .firstPersonSingular.text
+// );
+// // output: "yo"
+// */

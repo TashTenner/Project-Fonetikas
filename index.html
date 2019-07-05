@@ -11,6 +11,14 @@
     <link rel="stylesheet" type="text/css" href="./css/main.css" />
   </head>
   <body>
+    <!--LANDING PAGE-->
+    <div id="start-page">
+      <button id="hide-start" onclick="">Alemán para hispanohablantes</button>
+    </div>
+    <!--PAUSE - REPETITION PAGE-->
+    <div id="pause-page">
+      <button id="hide-pause" onclick="">Back to the lesson</button>
+    </div>
     <div class="wrapper">
       <!--PROGRESS-->
       <div id="progress">
@@ -71,22 +79,19 @@
       <!--CHECK, PAUSE, BACK TO LANDING PAGE-->
       <div id="bottom">
         <div class="check margin-l-r">
-          <button class="btn-check">check</button>
+          <button id="btn-check" onclick="configLesson()">check</button>
         </div>
         <div class="pause margin-l-r">
-          <button class="btn-pause">pause</button>
+          <button id="btn-pause">pause</button>
         </div>
         <div class="choose-language margin-l-r">
-          <button class="choose-language">Choose another language</button>
+          <button id="choose-language">Choose another language</button>
         </div>
       </div>
     </div>
-    <!--<script src="./js/defaultSpanish.js"></script>
-   <script src="./js/defaultGerman.js"></script>
-   <script src="./js/spanishVocab.js"></script>
-   <script src="./js/germanVocab.js"></script>
-   <script src="./js/spanishGerman.js"></script>
-   <script src="./js/word.js"></script>-->
+    <script src="./js/word.js"></script>
+    <script src="./js/germanVocab.js"></script>
+    <script src="./js/spanishGerman.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>

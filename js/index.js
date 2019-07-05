@@ -1,55 +1,47 @@
-class Word {
-  constructor(text, icon, audio) {
-    this.text = text;
-    this.audio = new Audio();
-    this.audio.src = audio;
-    this.icon = new Image();
-    this.icon.src = icon;
-  }
-  play() {}
-}
+const wordIntroOne = ["yoSpa"];
+const wordIntroTwo = ["estoySpa"];
+const wordIntroThree = ["aquiSpa"];
+const wordIntroFour = ["alliSpa"];
 
-let ich = new Word("ich", "img/ampersand.png", "audio/rec.m4a");
+// configLesson(stepOne);
+const configLesson = function(unit, wordIntro) {
+  wordIntro.forEach(function(word) {
+    const text = spanishGerman[unit][word][0];
+    let ppp = document.getElementById("native-language");
+    ppp.textContent = text;
 
-const spanishGerman = {
-  unitOne: {
-    yo: ["yo", ich]
-    //   estoy: ["estoy", bin],
-    //   aquí: ["aquí", hier],
-    //   allí: ["allí", dort],
-    //   tú: ["tú", du],
-    //   estás: ["estás", bist],
-    //   y: ["y", und],
-    //   también: ["también", auch],
-    //   pero: ["pero", aber],
-    //   sí: ["sí", ja],
-    //   noOne: ["no(1)", nein],
-    //   noTwo: ["no(2)", nicht],
-    //   o: ["o", oder],
-    //   él: ["él", er],
-    //   ella: ["ella", sie],
-    //   está: ["está", ist],
-    //   hola: ["hola", hallo]
-    // },
-    // unitTwo: {
-    //   meLlamo: ["me llamo", heiße]
-  }
+    let srcIconWord = spanishGerman[unit][word][1].icon.getAttribute("src");
+    let targetLanguage = document.getElementById("icon-target-language");
+    targetLanguage.setAttribute("src", srcIconWord);
+
+    document.getElementById("play").addEventListener("click", function(e) {
+      e.preventDefault();
+      spanishGerman[unit][word][1].audio.play();
+    });
+  });
 };
 
-let baseWord = spanishGerman.unitOne.yo[0];
-console.log(baseWord);
-let ppp = document.getElementById("native-language");
-console.log(ppp.innerText);
-//ppp.textContent(baseWord);
+// var el = document.getElementById("btn-check");
+// if (el.onclick) {
+//   configLesson();
+// }
 
-// que me agarre el ícono y lo muestre
-let srcIconWord = ich.icon.getAttribute("src");
-let targetLanguage = document.getElementById("icon-target-language");
-targetLanguage.setAttribute("src", srcIconWord);
+// buttons
+const btnStart = document.getElementById("hide-start");
+btnStart.onclick = function() {
+  const landingDiv = document.getElementById("start-page");
+  landingDiv.style.visibility = "hidden";
+};
 
-// que haga play al sonido de la palabra
-document.getElementById("play").addEventListener("click", function(e) {
-  e.preventDefault();
-  ich.audio.play();
-});
-// no comprendo bien lo de preventDefault
+// que la function tb me cargue configLesson('unitOne', stepOne)
+const btnPauseOn = document.getElementById("btn-pause");
+btnPauseOn.onclick = function() {
+  const pauseDiv = document.getElementById("pause-page");
+  pauseDiv.style.visibility = "visible";
+};
+
+const btnPauseOff = document.getElementById("hide-pause");
+btnPauseOff.onclick = function() {
+  const pauseDiv = document.getElementById("pause-page");
+  pauseDiv.style.visibility = "hidden";
+};
