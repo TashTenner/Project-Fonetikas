@@ -20,8 +20,8 @@ const wordIntro17 = ["holaSpa"];
 const configLesson = function(unit, wordIntro) {
   wordIntro.forEach(function(word) {
     const text = spanishGerman[unit][word][0];
-    let ppp = document.getElementById("native-language");
-    ppp.textContent = text;
+    let natLanguage = document.getElementById("native-language");
+    natLanguage.textContent = text;
 
     let srcIconWord = spanishGerman[unit][word][1].icon.getAttribute("src");
     let targetLanguage = document.getElementById("icon-target-language");
@@ -32,8 +32,27 @@ const configLesson = function(unit, wordIntro) {
       spanishGerman[unit][word][1].audio.play();
     };
 
+    const unitAndWord = spanishGerman[unit][word][2];
+    let unitWordCount = document.getElementById("index-unit");
+    unitWordCount.textContent = unitAndWord;
+
+    const showTaskInNatLang = spanishGerman[unit][word][3];
+    let imperativePhrase = document.getElementById("imperative-title");
+    imperativePhrase.textContent = showTaskInNatLang;
+
+    const showTitleOptiones = spanishGerman[unit][word][4];
+    let chooseAudio = document.getElementById("choose-correct-audio");
+    chooseAudio.textContent = showTitleOptiones;
+
+    let showEqualSign = document.getElementById("equal-sign");
+    showEqualSign.textContent = "=";
+
     document.getElementById("play").removeEventListener("click", addAudio);
     document.getElementById("play").addEventListener("click", addAudio);
+
+    // let srcIconWord = spanishGerman[unit][word][1].icon.getAttribute("src");
+    // let targetLanguage = document.getElementById("icon-target-language");
+    // targetLanguage.setAttribute("src", srcIconWord);
   });
 };
 
