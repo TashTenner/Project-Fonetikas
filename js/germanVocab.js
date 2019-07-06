@@ -9,14 +9,18 @@ let bistGer = new Word("bist", "img/are-2nd-sg-green.png", "audio/bistGer.m4a");
 let undGer = new Word("und", "img/and.png", "audio/undGer.m4a"); //ampersand
 let auchGer = new Word("auch", "img/also.png", "audio/auchGer.m4a"); //two checks
 let aberGer = new Word("aber", "img/but.png", "audio/aberGer.m4a"); //unequal sign
-let jaGer = new Word("ja", "img/yes-no1.png", "audio/jaGer.m4a"); //yes and no sign, yes with colour
-let neinGer = new Word("nein", "img/yes-no2.png", "audio/neinGer.m4a"); //yes and no sign, no with colour and nr(1)
-let nichtGer = new Word("nicht", "img/I-yellow.png", "audio/nichtGer.m4a"); //yes and no sign, no with colour and nr(2)
-let oderGer = new Word("oder", "img/I-yellow.png", "audio/oderGer.m4a"); //||
-let erGer = new Word("er", "img/I-yellow.png", "audio/erGer.m4a"); //person, blue
-let sieGer = new Word("sie", "img/I-yellow.png", "audio/sieGer.m4a"); //person, red/pink/bordeaux
-let istGer = new Word("ist", "img/I-yellow.png", "audio/istGer.m4a"); //circle, blue and red and grey
-let halloGer = new Word("hallo", "img/I-yellow.png", "audio/halloGer.m4a"); //person waving
+let jaGer = new Word("ja", "img/yes-no.png", "audio/jaGer.m4a"); //yes and no sign, yes with colour
+let neinGer = new Word("nein", "img/yes-no1.png", "audio/neinGer.m4a"); //yes and no sign, no with colour and nr(1)
+let nichtGer = new Word("nicht", "img/yes-no2.png", "audio/nichtGer.m4a"); //yes and no sign, no with colour and nr(2)
+let oderGer = new Word("oder", "img/or.png", "audio/oderGer.m4a"); //||
+let erGer = new Word("er", "img/he-blue.png", "audio/erGer.m4a"); //person, blue
+let sieGer = new Word("sie", "img/she-red.png", "audio/sieGer.m4a"); //person, red/bordeaux
+let istGer = new Word(
+  "ist",
+  "img/is-3nd-sg-blue-red-grey.png",
+  "audio/istGer.m4a"
+); //circle, blue (#05025fff) and red (#5f021fff) and grey (#999999ff)
+let halloGer = new Word("hallo", "img/hello.png", "audio/halloGer.m4a"); //person waving
 
 // // lesson 2
 // let heisseGer = new Word("heiße"); //issue with heisst, 2nd p.sg and 3rd p sg.

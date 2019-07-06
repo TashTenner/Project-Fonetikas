@@ -1,7 +1,20 @@
-const wordIntroOne = ["yoSpa"];
-const wordIntroTwo = ["estoySpa"];
-const wordIntroThree = ["aquiSpa"];
-const wordIntroFour = ["alliSpa"];
+const wordIntro1 = ["yoSpa"];
+const wordIntro2 = ["estoySpa"];
+const wordIntro3 = ["aquiSpa"];
+const wordIntro4 = ["alliSpa"];
+const wordIntro5 = ["tuSpa"];
+const wordIntro6 = ["estasSpa"];
+const wordIntro7 = ["ySpa"];
+const wordIntro8 = ["tambienSpa"];
+const wordIntro9 = ["peroSpa"];
+const wordIntro10 = ["siSpa"];
+const wordIntro11 = ["noSpaOne"];
+const wordIntro12 = ["noSpaTwo"];
+const wordIntro13 = ["oSpa"];
+const wordIntro14 = ["elSpa"];
+const wordIntro15 = ["ellaSpa"];
+const wordIntro16 = ["estaSpa"];
+const wordIntro17 = ["holaSpa"];
 
 // configLesson(stepOne);
 const configLesson = function(unit, wordIntro) {
@@ -14,10 +27,13 @@ const configLesson = function(unit, wordIntro) {
     let targetLanguage = document.getElementById("icon-target-language");
     targetLanguage.setAttribute("src", srcIconWord);
 
-    document.getElementById("play").addEventListener("click", function(e) {
-      e.preventDefault();
+    const addAudio = function() {
+      // e.preventDefault();
       spanishGerman[unit][word][1].audio.play();
-    });
+    };
+
+    document.getElementById("play").removeEventListener("click", addAudio);
+    document.getElementById("play").addEventListener("click", addAudio);
   });
 };
 

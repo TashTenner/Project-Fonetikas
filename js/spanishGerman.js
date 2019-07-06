@@ -30,10 +30,16 @@ const spanishGerman = {
     noSpaTwo: ["no(2)", nichtGer],
     // negation, syntax
     oSpa: ["o", oderGer],
+    // ¿Estás aquí o estás alli?
     elSpa: ["él", erGer],
+    // El y yo.
     ellaSpa: ["ella", sieGer],
+    // Ella o él.
     estaSpa: ["está", istGer],
+    // El está alli pero yo no estoy alli.
+    // Ella tambien está aqui.
     holaSpa: ["hola", halloGer]
+    // Hola, el está auqí? - Hola! No, el no está aquí pero ella está aqui.
   }
   // unitTwo: {
   //   meLlamoSpa: ["me llamo", heisseGer]
