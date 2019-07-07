@@ -8,8 +8,8 @@ font-family: 'Montserrat', sans-serif;*/
 }
 
 body {
-  /*background: #ecf1f3;*/
-  background-image: url("./../img/background-img.png");
+  background: #ecf1f3;
+  /*background-image: url("./../img/background-img.png");*/
   font-family: "Rubik", sans-serif;
   padding-top: 0px;
   padding-right: 0px;

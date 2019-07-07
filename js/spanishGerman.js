@@ -10,6 +10,9 @@ const listenAudio = {
   },
   threeOptionsAudios: {
     spanish: "¿Cuál de las tres opciones es la pronuncación correcta?"
+  },
+  createPhrase: {
+    spanish: "¿Cómo se crea la frase?"
   }
 };
 
@@ -18,29 +21,35 @@ const spanishGerman = {
     yoSpa: [
       "yo",
       ichGer,
-      "Unit 1, word 1 from 17",
+      "Unidad 1, palabra 1 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
     estoySpa: [
       "estoy",
       binGer,
-      "Unit 1, word 2 from 17",
+      "Unidad 1, palabra 2 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
     aquiSpa: [
       "aquí",
       hierGer,
-      "Unit 1, word 3 from 17",
+      "Unidad 1, palabra 3 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
-    // create a phrase "yo estoy aqui"
+    yoEstoyAqui: [
+      listenAudio.createPhrase.spanish,
+      "Yo estoy aquí.",
+      "Unidad 1, frase 1 de <number>",
+      [binGer, ichGer, hierGer]
+      //audio complete phrase
+    ], // create a phrase "yo estoy aqui"
     alliSpa: [
       "allí",
       dortGer,
-      "Unit 1, word 4 from 17",
+      "Unidad 1, palabra 4 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
@@ -48,14 +57,14 @@ const spanishGerman = {
     tuSpa: [
       "tú",
       duGer,
-      "Unit 1, word 5 from 17",
+      "Unidad 1, palabra 5 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
     estasSpa: [
       "estás",
       bistGer,
-      "Unit 1, word 6 from 17",
+      "Unidad 1, palabra 6 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
@@ -64,7 +73,7 @@ const spanishGerman = {
     ySpa: [
       "y",
       undGer,
-      "Unit 1, word 7 from 17",
+      "Unidad 1, palabra 7 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
@@ -72,7 +81,7 @@ const spanishGerman = {
     tambienSpa: [
       "también",
       auchGer,
-      "Unit 1, word 8 from 17",
+      "Unidad 1, palabra 8 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
@@ -83,7 +92,7 @@ const spanishGerman = {
     peroSpa: [
       "pero",
       aberGer,
-      "Unit 1, word 9 from 17",
+      "Unidad 1, palabra 9 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
@@ -91,7 +100,7 @@ const spanishGerman = {
     siSpa: [
       "sí",
       jaGer,
-      "Unit 1, word 10 from 17",
+      "Unidad 1, palabra 10 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
@@ -99,7 +108,7 @@ const spanishGerman = {
     noSpaOne: [
       "no(1)",
       neinGer,
-      "Unit 1, word 11 from 17",
+      "Unidad 1, palabra 11 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
@@ -107,7 +116,7 @@ const spanishGerman = {
     noSpaTwo: [
       "no(2)",
       nichtGer,
-      "Unit 1, word 12 from 17",
+      "Unidad 1, palabra 12 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
@@ -115,7 +124,7 @@ const spanishGerman = {
     oSpa: [
       "o",
       oderGer,
-      "Unit 1, word 13 from 17",
+      "Unidad 1, palabra 13 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
@@ -123,7 +132,7 @@ const spanishGerman = {
     elSpa: [
       "él",
       erGer,
-      "Unit 1, word 14 from 17",
+      "Unidad 1, palabra 14 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
@@ -131,7 +140,7 @@ const spanishGerman = {
     ellaSpa: [
       "ella",
       sieGer,
-      "Unit 1, word 15 from 17",
+      "Unidad 1, palabra 15 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
@@ -139,7 +148,7 @@ const spanishGerman = {
     estaSpa: [
       "está",
       istGer,
-      "Unit 1, word 16 from 17",
+      "Unidad 1, palabra 16 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
@@ -148,7 +157,7 @@ const spanishGerman = {
     holaSpa: [
       "hola",
       halloGer,
-      "Unit 1, word 17 from 17",
+      "Unidad 1, palabra 17 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ]
