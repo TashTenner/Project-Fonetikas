@@ -72,3 +72,18 @@ body {
   margin-left: 1%;
   margin-right: 1%;
 }
+
+.audio-sign {
+  max-width: 50%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.option-a,
+.option-b,
+.option-c {
+  width: 25%;
+}
