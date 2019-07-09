@@ -21,7 +21,9 @@ const wordIntro17 = ["holaSpa"];
 // var for audio spot
 const linkPlay = document.getElementById("play");
 const linkPlaySevDivs = document.getElementById("play-sev-divs");
-const linkPlayThreeOptions = document.getElementById("sound-a");
+const linkPlayThreeOptionsA = document.getElementById("sound-a");
+const linkPlayThreeOptionsB = document.getElementById("sound-b");
+const linkPlayThreeOptionsC = document.getElementById("sound-c");
 
 let addAudio;
 let addAudioSevDivs;
@@ -34,6 +36,8 @@ function pickRandomAudio() {
   var audioName = audioGer[Math.floor(Math.random() * audioGer.length)];
   return audioName;
 }
+
+let arrayThreeAudios = [];
 
 // create divs for several icons
 
@@ -81,30 +85,43 @@ const configLesson = function(unit, wordIntro) {
       };
       linkPlay.addEventListener("click", addAudio);
 
-      // plays sound, three options, wrong 1
+      // plays sound, three options, wrong 1 and 2
       let pickedAudioOne = pickRandomAudio();
-
-      if (pickedAudioOne !== spanishGerman[unit][word][1]) {
-        addAudioThreeOptions = function() {
-          pickedAudioOne.audio.play();
-        };
-        linkPlayThreeOptions.addEventListener("click", addAudioThreeOptions);
+      while (pickedAudioOne === spanishGerman[unit][word][1]) {
+        pickedAudioOne = pickRandomAudio();
       }
-      //  else {}
-
-      // plays sound, three options, wrong 2
+      addAudioThreeOptions1 = function() {
+        pickedAudioOne.audio.play();
+      };
       let pickedAudioTwo = pickRandomAudio();
-
-      if (
-        pickedAudioTwo !== spanishGerman[unit][word][1] &&
-        pickedAudioTwo !== pickedAudioOne
+      while (
+        pickedAudioTwo === spanishGerman[unit][word][1] ||
+        pickedAudioTwo === pickedAudioOne
       ) {
-        addAudioThreeOptions = function() {
-          pickedAudioTwo.audio.play();
-        };
-        linkPlayThreeOptions.addEventListener("click", addAudioThreeOptions);
+        pickedAudioTwo = pickRandomAudio();
       }
-      //  else {}
+      addAudioThreeOptions2 = function() {
+        pickedAudioTwo.audio.play();
+      };
+
+      function shuffle(array) {
+        array.sort(function() {
+          return Math.random() - 0.5;
+        });
+      }
+
+      arrayThreeAudios = [
+        addAudioThreeOptions1,
+        addAudioThreeOptions2,
+        addAudio
+      ];
+      shuffle(arrayThreeAudios);
+
+      // plays two incorrect audios
+      linkPlayThreeOptionsA.addEventListener("click", arrayThreeAudios[0]);
+      linkPlayThreeOptionsB.addEventListener("click", arrayThreeAudios[1]);
+      // plays sound, three options, correct sound 3
+      linkPlayThreeOptionsC.addEventListener("click", arrayThreeAudios[2]);
 
       // shows unit, word index
       const unitAndWord = spanishGerman[unit][word][2];
@@ -214,7 +231,10 @@ function goToNextWord() {
 const nextWord = document.getElementById("next-word");
 nextWord.onclick = function() {
   linkPlay.removeEventListener("click", addAudio);
-  linkPlayThreeOptions.removeEventListener("click", addAudioThreeOptions);
+
+  linkPlayThreeOptionsA.removeEventListener("click", arrayThreeAudios[0]);
+  linkPlayThreeOptionsB.removeEventListener("click", arrayThreeAudios[1]);
+  linkPlayThreeOptionsC.removeEventListener("click", arrayThreeAudios[2]);
 
   // NOT show =
   let showEqualSign = document.getElementById("equal-sign");
