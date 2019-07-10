@@ -20,6 +20,7 @@ const wordIntro17 = ["holaSpa"];
 
 // var for audio spot
 const linkPlay = document.getElementById("play");
+// este siguiente Id no esta creado es por eso que no encuentra nada
 const linkPlaySevDivs = document.getElementById("play-sev-divs");
 const linkPlayThreeOptionsA = document.getElementById("sound-a");
 const linkPlayThreeOptionsB = document.getElementById("sound-b");
@@ -27,39 +28,59 @@ const linkPlayThreeOptionsC = document.getElementById("sound-c");
 
 let addAudio;
 let addAudioSevDivs;
-let addAudioThreeOptions;
+let addAudioThreeOptions1;
+let addAudioThreeOptions2;
 
 let wordForLoop;
+let correctAudio;
 
 // pick a random audio
-function pickRandomAudio() {
+function pickRandom() {
   var audioName = audioGer[Math.floor(Math.random() * audioGer.length)];
   return audioName;
 }
 
 let arrayThreeAudios = [];
 
+// shuffle
+function shuffle(array) {
+  array.sort(function() {
+    return Math.random() - 0.5;
+  });
+}
+
 // create divs for several icons
 
-function createSeveralDivsIcon() {
+function createSeveralDivsIcon(words) {
   let parentSeveralWords = document.querySelector(".several-words");
-  let divSubSeveralWords = document.createElement("div");
-  divSubSeveralWords.setAttribute("class", "target-language-sev-divs");
-  let aSubSeveralWords = document.createElement("a");
-  aSubSeveralWords.setAttribute("href", "#");
-  aSubSeveralWords.setAttribute("id", "play-sev-divs");
-  let imgSubSeveralWords = document.createElement("img");
-  imgSubSeveralWords.setAttribute("id", "icon-target-language-sev-divs");
+  let content = "";
+  words.forEach(function(word) {
+    content += `
+      <div class="target-language" onClick=>
+        <img class="icon-target-language" src= ${word.icon.src} />
+      </div>
+    `;
+  });
+  parentSeveralWords.innerHTML = content;
 
-  parentSeveralWords.appendChild(divSubSeveralWords);
-  divSubSeveralWords.appendChild(aSubSeveralWords);
-  aSubSeveralWords.appendChild(imgSubSeveralWords);
+  // let divSubSeveralWords = document.createElement("div");
+  // divSubSeveralWords.setAttribute("class", "target-language-sev-divs");
+  // let aSubSeveralWords = document.createElement("a");
+  // aSubSeveralWords.setAttribute("href", "#");
+  // // este id se crea aca
+  // aSubSeveralWords.setAttribute("id", "play-sev-divs");
+  // let imgSubSeveralWords = document.createElement("img");
+  // imgSubSeveralWords.setAttribute("id", "icon-target-language-sev-divs");
+
+  // parentSeveralWords.appendChild(divSubSeveralWords);
+  // divSubSeveralWords.appendChild(aSubSeveralWords);
+  // aSubSeveralWords.appendChild(imgSubSeveralWords);
 }
 
 // configLesson(stepOne);
 const configLesson = function(unit, wordIntro) {
   if (
-    wordIntro === wordIntro1 ||
+    wordIntro[0] === wordIntro1[0] ||
     wordIntro === wordIntro2 ||
     wordIntro === wordIntro3 ||
     wordIntro === wordIntro4 ||
@@ -68,6 +89,7 @@ const configLesson = function(unit, wordIntro) {
   ) {
     wordIntro.forEach(function(word) {
       wordForLoop = wordIntro;
+      correctAudio = spanishGerman[unit][word][1].audio;
 
       // writes the Spanish word
       const text = spanishGerman[unit][word][0];
@@ -86,42 +108,40 @@ const configLesson = function(unit, wordIntro) {
       linkPlay.addEventListener("click", addAudio);
 
       // plays sound, three options, wrong 1 and 2
-      let pickedAudioOne = pickRandomAudio();
+      let pickedAudioOne = pickRandom();
       while (pickedAudioOne === spanishGerman[unit][word][1]) {
-        pickedAudioOne = pickRandomAudio();
+        pickedAudioOne = pickRandom();
       }
       addAudioThreeOptions1 = function() {
         pickedAudioOne.audio.play();
       };
-      let pickedAudioTwo = pickRandomAudio();
+      let pickedAudioTwo = pickRandom();
       while (
         pickedAudioTwo === spanishGerman[unit][word][1] ||
         pickedAudioTwo === pickedAudioOne
       ) {
-        pickedAudioTwo = pickRandomAudio();
+        pickedAudioTwo = pickRandom();
       }
       addAudioThreeOptions2 = function() {
         pickedAudioTwo.audio.play();
       };
 
-      function shuffle(array) {
-        array.sort(function() {
-          return Math.random() - 0.5;
-        });
-      }
-
       arrayThreeAudios = [
-        addAudioThreeOptions1,
-        addAudioThreeOptions2,
-        addAudio
+        [addAudioThreeOptions1, "¡Inténtalo otra vez!"],
+        [addAudioThreeOptions2, "¡Inténtalo otra vez!"],
+        [addAudio, "¡Correcto!"]
       ];
       shuffle(arrayThreeAudios);
 
       // plays two incorrect audios
-      linkPlayThreeOptionsA.addEventListener("click", arrayThreeAudios[0]);
-      linkPlayThreeOptionsB.addEventListener("click", arrayThreeAudios[1]);
+      linkPlayThreeOptionsA.addEventListener("click", arrayThreeAudios[0][0]);
+      // linkPlayThreeOptionsA.addEventListener(
+      //   "ondblclick",
+      //   alert(arrayThreeAudios[0][1])
+      // );
+      linkPlayThreeOptionsB.addEventListener("click", arrayThreeAudios[1][0]);
       // plays sound, three options, correct sound 3
-      linkPlayThreeOptionsC.addEventListener("click", arrayThreeAudios[2]);
+      linkPlayThreeOptionsC.addEventListener("click", arrayThreeAudios[2][0]);
 
       // shows unit, word index
       const unitAndWord = spanishGerman[unit][word][2];
@@ -167,23 +187,7 @@ const configLesson = function(unit, wordIntro) {
       let unitWordCount = document.getElementById("index-unit");
       unitWordCount.textContent = unitAndWord;
 
-      createSeveralDivsIcon();
-
-      // shows icon of target language
-      let srcIconWordSevDivs = spanishGerman[unit][
-        word
-      ][3][0].icon.getAttribute("src");
-      let targetLanguageSevDivs = document.getElementById(
-        "icon-target-language-sev-divs"
-      );
-      targetLanguageSevDivs.setAttribute("src", srcIconWordSevDivs);
-
-      // // plays sound
-      // addAudioSevDivs = function() {
-      //   //e.preventDefault();
-      //   spanishGerman[unit][word][3][0].audio.play();
-      // };
-      // linkPlaySevDivs.addEventListener("click", addAudioSevDivs);
+      createSeveralDivsIcon(spanishGerman[unit][word][3]);
     });
   }
 };
@@ -229,7 +233,12 @@ function goToNextWord() {
 }
 
 const nextWord = document.getElementById("next-word");
+// if () {}
+
 nextWord.onclick = function() {
+  console.log(wordForLoop);
+  console.log(correctAudio);
+
   linkPlay.removeEventListener("click", addAudio);
 
   linkPlayThreeOptionsA.removeEventListener("click", arrayThreeAudios[0]);
@@ -270,7 +279,8 @@ nextWord.onclick = function() {
 
   // NOT show icon of target language
   const deleteChildNodes = document.getElementsByClassName("several-words")[0];
-  console.log(deleteChildNodes.firstChild);
+
+  document.querySelector(".target-language").style.display = "none";
 
   if (deleteChildNodes.firstChild) {
     while (deleteChildNodes.firstChild) {

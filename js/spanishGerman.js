@@ -9,7 +9,8 @@ const listenAudio = {
     german: "click hier"
   },
   threeOptionsAudios: {
-    spanish: "¿Cuál de las tres opciones es la pronuncación correcta?"
+    spanish:
+      "¿Cuál de las tres opciones es la pronuncación correcta? ¡Elige con el doble-click!"
   },
   createPhrase: {
     spanish: "¿Cómo se crea la frase?"
@@ -43,7 +44,7 @@ const spanishGerman = {
       listenAudio.createPhrase.spanish,
       "Yo estoy aquí.",
       "Unidad 1, frase 1 de <number>",
-      [binGer, ichGer, hierGer]
+      [ichGer, binGer, hierGer]
       //audio complete phrase
     ],
     alliSpa: [
@@ -57,7 +58,7 @@ const spanishGerman = {
       listenAudio.createPhrase.spanish,
       "Yo estoy allí.",
       "Unidad 1, frase 2 de <number>",
-      [binGer, ichGer, dortGer]
+      [ichGer, binGer, dortGer]
       //audio complete phrase
     ],
     tuSpa: [

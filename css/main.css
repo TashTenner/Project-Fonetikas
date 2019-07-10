@@ -71,6 +71,8 @@ body {
 .target-language {
   margin-left: 1%;
   margin-right: 1%;
+  display: flex;
+  align-items: center;
 }
 
 .audio-sign {
@@ -86,4 +88,19 @@ body {
 .option-b,
 .option-c {
   width: 25%;
+}
+
+.several-words {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.target-language {
+  width: 128px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
 }
