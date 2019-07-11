@@ -90,13 +90,18 @@ body {
   width: 25%;
 }
 
-.several-words {
+.several-words,
+.correct-phrase {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .target-language {
+  width: 128px;
+}
+
+.target-language-phrase {
   width: 128px;
 }
 
