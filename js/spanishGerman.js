@@ -9,8 +9,7 @@ const listenAudio = {
     german: "click hier"
   },
   threeOptionsAudios: {
-    spanish:
-      "¿Cuál de las tres opciones es la pronuncación correcta? ¡Elige con el doble-click!"
+    spanish: "¿Cuál de las tres opciones es la pronuncación correcta?"
   },
   createPhrase: {
     spanish: "¿Cómo se crea la frase?"

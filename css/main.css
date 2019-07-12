@@ -84,9 +84,7 @@ body {
   justify-content: center;
 }
 
-.option-a,
-.option-b,
-.option-c {
+.option-abc {
   width: 25%;
 }
 

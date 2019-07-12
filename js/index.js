@@ -18,6 +18,8 @@ const wordIntro15 = ["ellaSpa"];
 const wordIntro16 = ["estaSpa"];
 const wordIntro17 = ["holaSpa"];
 
+let superCount = 0;
+
 // var for audio spot
 const linkPlay = document.getElementById("play");
 // este siguiente Id no esta creado es por eso que no encuentra nada
@@ -25,6 +27,9 @@ const linkPlaySevDivs = document.getElementById("play-sev-divs");
 const linkPlayThreeOptionsA = document.getElementById("sound-a");
 const linkPlayThreeOptionsB = document.getElementById("sound-b");
 const linkPlayThreeOptionsC = document.getElementById("sound-c");
+const linkPlayThreeOptionsABtn = document.getElementById("btn-check-a");
+const linkPlayThreeOptionsBBtn = document.getElementById("btn-check-b");
+const linkPlayThreeOptionsCBtn = document.getElementById("btn-check-c");
 
 let addAudio;
 let addAudioSevDivs;
@@ -60,7 +65,7 @@ function createSeveralDivsIcon(words) {
   words.forEach(function(word) {
     content += `
     <div class="target-language-phrase">
-      <img class="testing" id="${word.text}" src="${word.icon.src}"/>
+      <img class="iconWord" id="${word.text}" src="${word.icon.src}"/>
     </div>
     `;
     contentCorrectPhrase += `
@@ -72,49 +77,56 @@ function createSeveralDivsIcon(words) {
   parentSeveralWords.innerHTML = content;
   parentCorrectPhrase.innerHTML = contentCorrectPhrase;
 
-  let test2 = document.getElementsByClassName("testing");
-  // test2.forEach(function(e) {
-  //   console.log(e.getAttribute("id"));
-  // });
+  let changeIcons = document.getElementsByClassName("iconWord");
+  let numAllWords = changeIcons.length;
+  console.log(wordForLoop);
+  for (let i = 0; i < numAllWords; i++) {
+    changeIcons[i].addEventListener("click", event => {
+      // console.log(changeIcons);
+      // console.log("antes", superCount);
+      if (superCount < numAllWords) {
+        superCount += 1;
+      }
+      // console.log("despues", superCount);
+      let createdPhrase = document.getElementsByClassName("correct-phrase");
 
-  console.log(test2);
-  console.log(test2[0].getAttribute("id"));
-  console.log(test2[1].getAttribute("id"));
-  console.log(test2[2].getAttribute("id"));
+      console.log(spanishGerman.unitOne[wordForLoop][3][0].icon.src);
+      if (superCount === 1) {
+        let originSrc = event.path[0].attributes[2].nodeValue;
+        let srcNum = originSrc.indexOf("img");
+        let relativePathOfOriginSrc = originSrc.substring(srcNum);
+        createdPhrase[0].children[0].childNodes[1].src = relativePathOfOriginSrc;
+        event.path[1].removeChild(event.path[1].childNodes[1]);
+      } else if (superCount === 2) {
+        let originSrc = event.path[0].attributes[2].nodeValue;
+        let srcNum = originSrc.indexOf("img");
+        let relativePathOfOriginSrc = originSrc.substring(srcNum);
+        createdPhrase[0].children[1].childNodes[1].src = relativePathOfOriginSrc;
+        event.path[1].removeChild(event.path[1].childNodes[1]);
+      } else if (superCount === 3) {
+        let originSrc = event.path[0].attributes[2].nodeValue;
+        let srcNum = originSrc.indexOf("img");
+        let relativePathOfOriginSrc = originSrc.substring(srcNum);
+        createdPhrase[0].children[2].childNodes[1].src = relativePathOfOriginSrc;
+        event.path[1].removeChild(event.path[1].childNodes[1]);
+      }
 
-  //     test1 = function() {
-  //       test.style.visibility = "hidden";
-  //     };
-  //     test2.forEach(function(e) {
-  //       e.addEventListener("click", test1);
-  //     });
-  // addAudio = function() {
-  //   spanishGerman[unit][word][1].audio.play();
-  // };
-  // linkPlay.addEventListener("click", addAudio);
+      // let compareSrcBase = spanishGerman[unit][word][3][2].icon.getAttribute(
+      //   "src"
+      // );
+      // let compareSrcExample = document.getElementsByClassName(
+      //   "icon-target-language"
+      // );
+      // console.log(compareSrcBase);
+      // targetLanguage.setAttribute("src", srcIconWord);
 
-  // let style = console.log(test);
-  // test.addEventListener("click", style);
-
-  //   const btnStart = document.getElementById("hide-start");
-  // btnStart.onclick = function() {
-  //   const landingDiv = document.getElementById("start-page");
-  //   landingDiv.style.visibility = "hidden";
-  //   configLesson("unitOne", wordIntro1);
-  // };
-  // onclick="${console.log("hi")}"
-
-  //let letHideIcon = hideIcon();
-  // function hideIcon() {
-  //   let test = document.getElementById(`${word.text}`);
-  //    test.style.visibility = "hidden";
-  // }
-  //ondblclick= ${hideIcon()}
-
-  // hideIcon = function() {
-  //   spanishGerman[unit][word][1].audio.play();
-  // };
-  // linkPlay.addEventListener("click", hideIcon);
+      //       const phraseIsCorrect = document.getElementById("btn-check");
+      // btnPauseOff.onclick = function() {
+      //   const pauseDiv = document.getElementById("pause-page");
+      //   pauseDiv.style.visibility = "hidden";
+      // };
+    });
+  }
 }
 
 // configLesson(stepOne);
@@ -130,6 +142,10 @@ const configLesson = function(unit, wordIntro) {
     wordIntro.forEach(function(word) {
       wordForLoop = wordIntro;
       correctAudio = spanishGerman[unit][word][1].audio;
+
+      // show task div
+      let hideShowTaskDiv = document.querySelector(".task");
+      hideShowTaskDiv.style.display = "block";
 
       // shows div element
       document.querySelector(".target-language").style.display = "block";
@@ -178,13 +194,18 @@ const configLesson = function(unit, wordIntro) {
 
       // plays two incorrect audios
       linkPlayThreeOptionsA.addEventListener("click", arrayThreeAudios[0][0]);
-      // linkPlayThreeOptionsA.addEventListener(
-      //   "ondblclick",
-      //   alert(arrayThreeAudios[0][1])
-      // );
+      linkPlayThreeOptionsABtn.onclick = function() {
+        alert(arrayThreeAudios[0][1]);
+      };
       linkPlayThreeOptionsB.addEventListener("click", arrayThreeAudios[1][0]);
+      linkPlayThreeOptionsBBtn.onclick = function() {
+        alert(arrayThreeAudios[1][1]);
+      };
       // plays sound, three options, correct sound 3
       linkPlayThreeOptionsC.addEventListener("click", arrayThreeAudios[2][0]);
+      linkPlayThreeOptionsCBtn.onclick = function() {
+        alert(arrayThreeAudios[2][1]);
+      };
 
       // shows unit, word index
       const unitAndWord = spanishGerman[unit][word][2];
@@ -234,8 +255,6 @@ const configLesson = function(unit, wordIntro) {
       shuffle(shufflePhrase);
 
       createSeveralDivsIcon(shufflePhrase);
-
-      // linkPlayThreeOptionsA.addEventListener("click", arrayThreeAudios[0][0]);
     });
   }
 };
@@ -281,7 +300,6 @@ function goToNextWord() {
 }
 
 const nextWord = document.getElementById("next-word");
-// if () {}
 
 nextWord.onclick = function() {
   linkPlay.removeEventListener("click", addAudio);
@@ -298,11 +316,9 @@ nextWord.onclick = function() {
   let targetLanguage = document.getElementById("icon-target-language");
   targetLanguage.setAttribute("src", "");
 
-  // NOT show three img of 1 correct audio, 2
-  let audioOptionfield = document.querySelectorAll(".audio-sign");
-  audioOptionfield.forEach(function(singleSrc) {
-    singleSrc.src = "";
-  });
+  // NOT show three buttons of audio options
+  let hideShowTaskDiv = document.querySelector(".task");
+  hideShowTaskDiv.style.display = "none";
 
   // NOT show title / task, choose correct audio
   let chooseAudio = document.getElementById("choose-correct-audio");
@@ -345,6 +361,7 @@ nextWord.onclick = function() {
   }
 
   document.querySelector(".target-language").style.display = "none";
+  superCount = 0;
 
   configLesson("unitOne", goToNextWord());
 };
