@@ -131,6 +131,10 @@ const configLesson = function(unit, wordIntro) {
       wordForLoop = wordIntro;
       correctAudio = spanishGerman[unit][word][1].audio;
 
+      // NOT show main check btn
+      let hideShowMainCheck = document.querySelector("#btn-check");
+      hideShowMainCheck.style.display = "none";
+
       // show task div
       let hideShowTaskDiv = document.querySelector(".task");
       hideShowTaskDiv.style.display = "block";
@@ -229,6 +233,10 @@ const configLesson = function(unit, wordIntro) {
   ) {
     wordIntro.forEach(function(word) {
       wordForLoop = wordIntro;
+
+      //  show main check btn
+      let hideShowMainCheck = document.querySelector("#btn-check");
+      hideShowMainCheck.style.display = "block";
 
       // shows title / task, what to do DONE
       const showTaskInNatLang = spanishGerman[unit][word][0];
