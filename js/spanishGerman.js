@@ -76,8 +76,22 @@ const spanishGerman = {
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
-    // Tu estas aqui
-    // Tu estas alli
+    tuEstasAqui: [
+      listenAudio.createPhrase.spanish,
+      "Tú estas aquí.",
+      "Unidad 1, frase 3 de <number>",
+      [duGer, bistGer, hierGer],
+      [duGer, bistGer, hierGer] //solution
+      //audio complete phrase
+    ],
+    tuEstasAlli: [
+      listenAudio.createPhrase.spanish,
+      "Tú estas allí.",
+      "Unidad 1, frase 4 de <number>",
+      [duGer, bistGer, dortGer],
+      [duGer, bistGer, dortGer] //solution
+      //audio complete phrase
+    ],
     ySpa: [
       "y",
       undGer,
@@ -85,7 +99,14 @@ const spanishGerman = {
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
-    // Yo estoy aqui y tú estas alli.
+    yoEstoyAquiYtuEstasAlli: [
+      listenAudio.createPhrase.spanish,
+      "Yo estoy aquí y tú estas allí.",
+      "Unidad 1, frase 5 de <number>",
+      [ichGer, binGer, hierGer, undGer, duGer, bistGer, dortGer],
+      [ichGer, binGer, hierGer, undGer, duGer, bistGer, dortGer] //solution
+      //audio complete phrase
+    ],
     tambienSpa: [
       "también",
       auchGer,

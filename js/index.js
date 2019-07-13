@@ -6,7 +6,10 @@ const wordIntro4 = ["alliSpa"];
 const phrase2 = ["yoEstoyAlli"];
 const wordIntro5 = ["tuSpa"];
 const wordIntro6 = ["estasSpa"];
+const phrase3 = ["tuEstasAqui"];
+const phrase4 = ["tuEstasAlli"];
 const wordIntro7 = ["ySpa"];
+const phrase5 = ["yoEstoyAquiYtuEstasAlli"];
 const wordIntro8 = ["tambienSpa"];
 const wordIntro9 = ["peroSpa"];
 const wordIntro10 = ["siSpa"];
@@ -217,7 +220,13 @@ const configLesson = function(unit, wordIntro) {
         singleSrc.src = "./img/threeAudios.png";
       });
     });
-  } else if (wordIntro === phrase1 || wordIntro === phrase2) {
+  } else if (
+    wordIntro === phrase1 ||
+    wordIntro === phrase2 ||
+    wordIntro === phrase3 ||
+    wordIntro === phrase4 ||
+    wordIntro === phrase5
+  ) {
     wordIntro.forEach(function(word) {
       wordForLoop = wordIntro;
 
@@ -282,8 +291,14 @@ function goToNextWord() {
   } else if (wordForLoop === wordIntro5) {
     return wordIntro6;
   } else if (wordForLoop === wordIntro6) {
+    return phrase3;
+  } else if (wordForLoop === phrase3) {
+    return phrase4;
+  } else if (wordForLoop === phrase4) {
     return wordIntro7;
   } else if (wordForLoop === wordIntro7) {
+    return phrase5;
+  } else if (wordForLoop === phrase5) {
     return wordIntro8;
   } else if (wordForLoop === wordIntro8) {
     return wordIntro9;
