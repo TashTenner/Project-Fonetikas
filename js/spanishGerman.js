@@ -43,7 +43,8 @@ const spanishGerman = {
       listenAudio.createPhrase.spanish,
       "Yo estoy aquí.",
       "Unidad 1, frase 1 de <number>",
-      [ichGer, binGer, hierGer]
+      [ichGer, binGer, hierGer],
+      [ichGer, binGer, hierGer] // solution
       //audio complete phrase
     ],
     alliSpa: [
@@ -57,7 +58,8 @@ const spanishGerman = {
       listenAudio.createPhrase.spanish,
       "Yo estoy allí.",
       "Unidad 1, frase 2 de <number>",
-      [ichGer, binGer, dortGer]
+      [ichGer, binGer, dortGer],
+      [ichGer, binGer, dortGer] //solution
       //audio complete phrase
     ],
     tuSpa: [

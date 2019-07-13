@@ -55,6 +55,17 @@ function shuffle(array) {
   });
 }
 
+// change icon
+function changeIcon(event) {
+  let originSrc = event.path[0].attributes[2].nodeValue;
+  let srcNum = originSrc.indexOf("img");
+  let relativePathOfOriginSrc = originSrc.substring(srcNum);
+  let createdPhrase = document.getElementsByClassName("correct-phrase");
+  let blank = createdPhrase[0].children[superCount].childNodes[1];
+  blank.src = relativePathOfOriginSrc;
+  event.path[1].removeChild(event.path[1].childNodes[1]);
+}
+
 // create divs for several icons
 function createSeveralDivsIcon(words) {
   let parentSeveralWords = document.querySelector(".several-words");
@@ -79,52 +90,15 @@ function createSeveralDivsIcon(words) {
 
   let changeIcons = document.getElementsByClassName("iconWord");
   let numAllWords = changeIcons.length;
-  console.log(wordForLoop);
   for (let i = 0; i < numAllWords; i++) {
     changeIcons[i].addEventListener("click", event => {
-      // console.log(changeIcons);
-      // console.log("antes", superCount);
-      if (superCount < numAllWords) {
+      let originId = event.currentTarget.id;
+      let ppp = spanishGerman.unitOne[wordForLoop][4][superCount].text;
+
+      if (originId === ppp) {
+        changeIcon(event);
         superCount += 1;
       }
-      // console.log("despues", superCount);
-      let createdPhrase = document.getElementsByClassName("correct-phrase");
-
-      console.log(spanishGerman.unitOne[wordForLoop][3][0].icon.src);
-      if (superCount === 1) {
-        let originSrc = event.path[0].attributes[2].nodeValue;
-        let srcNum = originSrc.indexOf("img");
-        let relativePathOfOriginSrc = originSrc.substring(srcNum);
-        createdPhrase[0].children[0].childNodes[1].src = relativePathOfOriginSrc;
-        event.path[1].removeChild(event.path[1].childNodes[1]);
-      } else if (superCount === 2) {
-        let originSrc = event.path[0].attributes[2].nodeValue;
-        let srcNum = originSrc.indexOf("img");
-        let relativePathOfOriginSrc = originSrc.substring(srcNum);
-        createdPhrase[0].children[1].childNodes[1].src = relativePathOfOriginSrc;
-        event.path[1].removeChild(event.path[1].childNodes[1]);
-      } else if (superCount === 3) {
-        let originSrc = event.path[0].attributes[2].nodeValue;
-        let srcNum = originSrc.indexOf("img");
-        let relativePathOfOriginSrc = originSrc.substring(srcNum);
-        createdPhrase[0].children[2].childNodes[1].src = relativePathOfOriginSrc;
-        event.path[1].removeChild(event.path[1].childNodes[1]);
-      }
-
-      // let compareSrcBase = spanishGerman[unit][word][3][2].icon.getAttribute(
-      //   "src"
-      // );
-      // let compareSrcExample = document.getElementsByClassName(
-      //   "icon-target-language"
-      // );
-      // console.log(compareSrcBase);
-      // targetLanguage.setAttribute("src", srcIconWord);
-
-      //       const phraseIsCorrect = document.getElementById("btn-check");
-      // btnPauseOff.onclick = function() {
-      //   const pauseDiv = document.getElementById("pause-page");
-      //   pauseDiv.style.visibility = "hidden";
-      // };
     });
   }
 }
@@ -137,7 +111,18 @@ const configLesson = function(unit, wordIntro) {
     wordIntro[0] === wordIntro3[0] ||
     wordIntro[0] === wordIntro4[0] ||
     wordIntro[0] === wordIntro5[0] ||
-    wordIntro[0] === wordIntro6[0]
+    wordIntro[0] === wordIntro6[0] ||
+    wordIntro[0] === wordIntro7[0] ||
+    wordIntro[0] === wordIntro8[0] ||
+    wordIntro[0] === wordIntro9[0] ||
+    wordIntro[0] === wordIntro10[0] ||
+    wordIntro[0] === wordIntro11[0] ||
+    wordIntro[0] === wordIntro12[0] ||
+    wordIntro[0] === wordIntro13[0] ||
+    wordIntro[0] === wordIntro14[0] ||
+    wordIntro[0] === wordIntro15[0] ||
+    wordIntro[0] === wordIntro16[0] ||
+    wordIntro[0] === wordIntro17[0]
   ) {
     wordIntro.forEach(function(word) {
       wordForLoop = wordIntro;
@@ -296,6 +281,28 @@ function goToNextWord() {
     return wordIntro5;
   } else if (wordForLoop === wordIntro5) {
     return wordIntro6;
+  } else if (wordForLoop === wordIntro6) {
+    return wordIntro7;
+  } else if (wordForLoop === wordIntro7) {
+    return wordIntro8;
+  } else if (wordForLoop === wordIntro8) {
+    return wordIntro9;
+  } else if (wordForLoop === wordIntro9) {
+    return wordIntro10;
+  } else if (wordForLoop === wordIntro10) {
+    return wordIntro11;
+  } else if (wordForLoop === wordIntro11) {
+    return wordIntro12;
+  } else if (wordForLoop === wordIntro12) {
+    return wordIntro13;
+  } else if (wordForLoop === wordIntro13) {
+    return wordIntro14;
+  } else if (wordForLoop === wordIntro14) {
+    return wordIntro15;
+  } else if (wordForLoop === wordIntro15) {
+    return wordIntro16;
+  } else if (wordForLoop === wordIntro16) {
+    return wordIntro17;
   }
 }
 
