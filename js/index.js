@@ -62,6 +62,11 @@ function createSeveralDivsIcon(words) {
   let parentCorrectPhrase = document.querySelector(".correct-phrase");
   let contentCorrectPhrase = "";
 
+  let originSrc = "";
+  let srcNum = "";
+  let relativePathOfOriginSrc = "";
+  let result = [];
+
   words.forEach(function(word) {
     content += `
     <div class="target-language-phrase">
@@ -90,25 +95,29 @@ function createSeveralDivsIcon(words) {
       // console.log("despues", superCount);
       let createdPhrase = document.getElementsByClassName("correct-phrase");
 
-      console.log(spanishGerman.unitOne[wordForLoop][3][0].icon.src);
-      if (superCount === 1) {
-        let originSrc = event.path[0].attributes[2].nodeValue;
-        let srcNum = originSrc.indexOf("img");
-        let relativePathOfOriginSrc = originSrc.substring(srcNum);
-        createdPhrase[0].children[0].childNodes[1].src = relativePathOfOriginSrc;
-        event.path[1].removeChild(event.path[1].childNodes[1]);
-      } else if (superCount === 2) {
-        let originSrc = event.path[0].attributes[2].nodeValue;
-        let srcNum = originSrc.indexOf("img");
-        let relativePathOfOriginSrc = originSrc.substring(srcNum);
-        createdPhrase[0].children[1].childNodes[1].src = relativePathOfOriginSrc;
-        event.path[1].removeChild(event.path[1].childNodes[1]);
-      } else if (superCount === 3) {
-        let originSrc = event.path[0].attributes[2].nodeValue;
-        let srcNum = originSrc.indexOf("img");
-        let relativePathOfOriginSrc = originSrc.substring(srcNum);
-        createdPhrase[0].children[2].childNodes[1].src = relativePathOfOriginSrc;
-        event.path[1].removeChild(event.path[1].childNodes[1]);
+      // console.log(spanishGerman.unitOne[wordForLoop][3][0].icon.src);
+      originSrc = event.path[0].attributes[2].nodeValue;
+      srcNum = originSrc.indexOf("img");
+      relativePathOfOriginSrc = originSrc.substring(srcNum);
+
+      switch (superCount) {
+        case 1:
+          result.push(relativePathOfOriginSrc);
+          createdPhrase[0].children[0].childNodes[1].src = relativePathOfOriginSrc;
+          event.path[1].removeChild(event.path[1].childNodes[1]);
+          break;
+        case 2:
+          result.push(relativePathOfOriginSrc);
+          createdPhrase[0].children[1].childNodes[1].src = relativePathOfOriginSrc;
+          event.path[1].removeChild(event.path[1].childNodes[1]);
+          break;
+        case 3:
+          result.push(relativePathOfOriginSrc);
+          createdPhrase[0].children[2].childNodes[1].src = relativePathOfOriginSrc;
+          event.path[1].removeChild(event.path[1].childNodes[1]);
+          break;
+        default:
+          console.error("ERROR!");
       }
 
       // let compareSrcBase = spanishGerman[unit][word][3][2].icon.getAttribute(
@@ -120,7 +129,18 @@ function createSeveralDivsIcon(words) {
       // console.log(compareSrcBase);
       // targetLanguage.setAttribute("src", srcIconWord);
 
-      //       const phraseIsCorrect = document.getElementById("btn-check");
+      const phraseIsCorrect = document.getElementById("btn-check");
+      phraseIsCorrect.onclick = function() {
+        if (
+          result[0].includes("I") &&
+          result[1].includes("am") &&
+          result[2].includes("here")
+        ) {
+          alert("muy bien!");
+        } else {
+          alert("ERROR - repasa las palabras");
+        }
+      };
       // btnPauseOff.onclick = function() {
       //   const pauseDiv = document.getElementById("pause-page");
       //   pauseDiv.style.visibility = "hidden";
