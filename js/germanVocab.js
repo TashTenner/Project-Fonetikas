@@ -3,6 +3,7 @@
 let ichGer = new Word("ich", "img/I-yellow.png", "audio/ichGer.m4a"); //person, yellow, #eef000ff
 let binGer = new Word("bin", "img/am-yellow.png", "audio/binGer.m4a"); //circle, yellow, #eef000ff
 let hierGer = new Word("hier", "img/here-there1.png", "audio/hierGer.m4a"); //two fields with an arrow
+let ichBinHierGer = new Phrase("Ich bin hier.", "audio/ichBinHierGer.m4a");
 let dortGer = new Word("dort", "img/here-there2.png", "audio/dortGer.m4a"); //two fields with an arrow
 let duGer = new Word("du", "img/you-2nd-sg-green.png", "audio/duGer.m4a"); //person, green, #17C847
 let bistGer = new Word("bist", "img/are-2nd-sg-green.png", "audio/bistGer.m4a"); //circle, green, #17C847

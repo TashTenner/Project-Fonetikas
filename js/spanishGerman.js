@@ -44,8 +44,8 @@ const spanishGerman = {
       "Yo estoy aquí.",
       "Unidad 1, frase 1 de <number>",
       [ichGer, binGer, hierGer],
-      [ichGer, binGer, hierGer] // solution
-      //audio complete phrase
+      [ichGer, binGer, hierGer], // solution
+      [ichBinHierGer]
     ],
     alliSpa: [
       "allí",
@@ -114,10 +114,42 @@ const spanishGerman = {
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
-    // Yo tambien estoy aquí. ojo syntax
-    // ¿Estoy (yo) aquí? syntax question, intonation, "null-subject" Spa
-    // ¿Estas aqui?
-    // ¿Estas tambien alli?
+    yoTambienEstoyAqui: [
+      listenAudio.createPhrase.spanish,
+      "Yo también estoy aquí. Sintaxis alemana: Yo estoy también aquí.",
+      "Unidad 1, frase 6 de <number>",
+      [ichGer, binGer, auchGer, hierGer],
+      [ichGer, binGer, auchGer, hierGer] //solution
+      //audio complete phrase
+    ],
+    yoEstoyAquiQuestion: [
+      listenAudio.createPhrase.spanish,
+      "¿Yo estoy aquí? Sintaxis alemana: ¿Estoy yo aquí?",
+      "Unidad 1, frase 7 de <number>",
+      [binGer, ichGer, hierGer],
+      [binGer, ichGer, hierGer] //solution
+      //audio complete phrase
+      //syntax question, intonation, "null-subject" Spa
+    ],
+
+    tuEstasAquiQuestion: [
+      listenAudio.createPhrase.spanish,
+      "¿Tú estás aquí? Sintaxis alemana: ¿Estás tú aquí?",
+      "Unidad 1, frase 8 de <number>",
+      [bistGer, duGer, hierGer],
+      [bistGer, duGer, hierGer] //solution
+      //audio complete phrase
+      //syntax question, intonation, "null-subject" Spa
+    ],
+    tuTambienEstasAlliQuestion: [
+      listenAudio.createPhrase.spanish,
+      "¿Tú tabmién estás allí? Sintaxis alemana: ¿Estás tú también allí?",
+      "Unidad 1, frase 9 de <number>",
+      [bistGer, duGer, auchGer, dortGer],
+      [bistGer, duGer, auchGer, dortGer] //solution
+      //audio complete phrase
+      //syntax question, intonation, "null-subject" Spa
+    ],
     peroSpa: [
       "pero",
       aberGer,
@@ -125,7 +157,14 @@ const spanishGerman = {
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
-    // Yo estoy aquí pero tu estás allí.
+    yoEstoyAquiPeroTuEstasAlli: [
+      listenAudio.createPhrase.spanish,
+      "Yo estoya aquí pero tú estás allí.",
+      "Unidad 1, frase 10 de <number>",
+      [ichGer, binGer, hierGer, aberGer, duGer, bistGer, dortGer],
+      [ichGer, binGer, hierGer, aberGer, duGer, bistGer, dortGer] //solution
+      //audio complete phrase
+    ],
     siSpa: [
       "sí",
       jaGer,
@@ -133,7 +172,14 @@ const spanishGerman = {
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
-    // ¿Estas aqui? - Sí, estoy aquí.
+    tuEstasAquiSiYoEstoyAqui: [
+      listenAudio.createPhrase.spanish,
+      "¿Estás aquí? - Sí, estoy aquí. Sintaxis alemana: ¿Estás tú(!) aquí? - Sí, yo(!) estoy aquí.",
+      "Unidad 1, frase 11 de <number>",
+      [bistGer, duGer, hierGer, jaGer, ichGer, binGer, hierGer],
+      [bistGer, duGer, hierGer, jaGer, ichGer, binGer, hierGer] //solution
+      //audio complete phrase
+    ],
     noSpaOne: [
       "no(1)",
       neinGer,
@@ -141,7 +187,14 @@ const spanishGerman = {
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish
     ],
-    // ¿Estas allí? - No.
+    tuEstasAlliNo: [
+      listenAudio.createPhrase.spanish,
+      "¿Estás allí? - No. Sintaxis alemana: ¿Estás tú(!) allí? - No.",
+      "Unidad 1, frase 12 de <number>",
+      [bistGer, duGer, dortGer, neinGer],
+      [bistGer, duGer, dortGer, neinGer] //solution
+      //audio complete phrase
+    ],
     noSpaTwo: [
       "no(2)",
       nichtGer,

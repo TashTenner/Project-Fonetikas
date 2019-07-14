@@ -67,6 +67,11 @@ function changeIcon(event) {
   let blank = createdPhrase[0].children[superCount].childNodes[1];
   blank.src = relativePathOfOriginSrc;
   event.path[1].removeChild(event.path[1].childNodes[1]);
+
+  const phraseIsCorrect = document.getElementById("btn-check");
+  phraseIsCorrect.onclick = function() {
+    spanishGerman.unitOne[wordForLoop][5][0].audio.play(); // sonido
+  };
 }
 
 // create divs for several icons

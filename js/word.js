@@ -8,3 +8,12 @@ class Word {
   }
   play() {}
 }
+
+class Phrase {
+  constructor(text, audio) {
+    this.text = text;
+    this.audio = new Audio();
+    this.audio.src = audio;
+  }
+  play() {}
+}
