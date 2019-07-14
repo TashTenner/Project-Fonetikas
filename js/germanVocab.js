@@ -5,23 +5,43 @@ let binGer = new Word("bin", "img/am-yellow.png", "audio/binGer.m4a"); //circle,
 let hierGer = new Word("hier", "img/here-there1.png", "audio/hierGer.m4a"); //two fields with an arrow
 let ichBinHierGer = new Phrase("Ich bin hier.", "audio/ichBinHierGer.m4a");
 let dortGer = new Word("dort", "img/here-there2.png", "audio/dortGer.m4a"); //two fields with an arrow
+let ichBinDort = new Phrase("Ich bin dort.");
 let duGer = new Word("du", "img/you-2nd-sg-green.png", "audio/duGer.m4a"); //person, green, #17C847
 let bistGer = new Word("bist", "img/are-2nd-sg-green.png", "audio/bistGer.m4a"); //circle, green, #17C847
+let duBistHier = new Phrase("Du bist hier.");
+let duBistDort = new Phrase("Du bist dort.");
 let undGer = new Word("und", "img/and.png", "audio/undGer.m4a"); //ampersand
+let ichBinHierUndDuBistDort = new Phrase("Ich bin hier und du bist dort.");
 let auchGer = new Word("auch", "img/also.png", "audio/auchGer.m4a"); //two checks
+let ichBinAuchHier = new Phrase("Ich bin auch hier.");
+let binIchHier = new Phrase("Bin ich hier?");
+let bistDuHier = new Phrase("Bist du hier?");
+let bistDuAuchDort = new Phrase("Bist du auch dort?");
 let aberGer = new Word("aber", "img/but.png", "audio/aberGer.m4a"); //unequal sign
+let ichBinHierAberDuBistDort = new Phrase("Ich bin hier, aber du bist dort.");
 let jaGer = new Word("ja", "img/yes-no.png", "audio/jaGer.m4a"); //yes and no sign, yes with colour
+let bistDuHierJaIchBinHier = new Phrase("Bist du hier? - Ja, ich bin hier.");
 let neinGer = new Word("nein", "img/yes-no1.png", "audio/neinGer.m4a"); //yes and no sign, no with colour and nr(1)
+let bistDuDortNein = new Phrase("Bist du dort? - Nein.");
 let nichtGer = new Word("nicht", "img/yes-no2.png", "audio/nichtGer.m4a"); //yes and no sign, no with colour and nr(2)
+let ichBinNichtHier = new Phrase("Ich bin nicht hier.");
+let bistDuNichtDort = new Phrase("Bist du nicht dort?");
 let oderGer = new Word("oder", "img/or.png", "audio/oderGer.m4a"); //||
+let bistDuHierOderBistDuDort = new Phrase("Bist du hier oder bist du dort?");
 let erGer = new Word("er", "img/he-blue.png", "audio/erGer.m4a"); //person, blue
+let erUndIch = new Phrase("Er und ich.");
 let sieGer = new Word("sie", "img/she-red.png", "audio/sieGer.m4a"); //person, red/bordeaux
+let sieOderEr = new Phrase("Sie oder er?");
 let istGer = new Word(
   "ist",
   "img/is-3nd-sg-blue-red-grey.png",
   "audio/istGer.m4a"
 ); //circle, blue (#05025fff) and red (#5f021fff) and grey (#999999ff)
+let sieIstAuchHier = new Phrase("Sie ist auch hier.");
 let halloGer = new Word("hallo", "img/hello.png", "audio/halloGer.m4a"); //person waving
+let halloIstErHierHalloNeinErIstNichtHierAberSieIstHier = new Phrase(
+  "Hallo! Ist er hier? - Hallo! Nein, er ist nicht hier, aber sie ist hier."
+);
 
 // // lesson 2
 // let heisseGer = new Word("heiße"); //issue with heisst, 2nd p.sg and 3rd p sg.

@@ -1,25 +1,42 @@
 const wordIntro1 = ["yoSpa"];
 const wordIntro2 = ["estoySpa"];
 const wordIntro3 = ["aquiSpa"];
-const phrase1 = ["yoEstoyAqui"];
+const phrase1 = ["phraseYoEstoyAqui"];
 const wordIntro4 = ["alliSpa"];
-const phrase2 = ["yoEstoyAlli"];
+const phrase2 = ["phraseYoEstoyAlli"];
 const wordIntro5 = ["tuSpa"];
 const wordIntro6 = ["estasSpa"];
-const phrase3 = ["tuEstasAqui"];
-const phrase4 = ["tuEstasAlli"];
+const phrase3 = ["phraseTuEstasAqui"];
+const phrase4 = ["phraseTuEstasAlli"];
 const wordIntro7 = ["ySpa"];
-const phrase5 = ["yoEstoyAquiYtuEstasAlli"];
+const phrase5 = ["phraseYoEstoyAquiYtuEstasAlli"];
 const wordIntro8 = ["tambienSpa"];
+const phrase6 = ["phraseYoTambienEstoyAqui"];
+const phrase7 = ["phraseYoEstoyAquiQuestion"];
+const phrase8 = ["phraseTuEstasAquiQuestion"];
+const phrase9 = ["phraseTuTambienEstasAlliQuestion"];
 const wordIntro9 = ["peroSpa"];
+const phrase10 = ["phraseYoEstoyAquiPeroTuEstasAlli"];
 const wordIntro10 = ["siSpa"];
+const phrase11 = ["phraseTuEstasAquiSiYoEstoyAquiDialogue"];
 const wordIntro11 = ["noSpaOne"];
+const phrase12 = ["phraseTuEstasAlliNoDialogue"];
 const wordIntro12 = ["noSpaTwo"];
+const phrase13 = ["phraseYoNoEstoyAqui"];
+const phrase14 = ["phraseTuNoEstasAlliQuestionQuestion"];
 const wordIntro13 = ["oSpa"];
+const phrase15 = ["phraseTuEstasAquiOTuEstasAlliQuestion"];
 const wordIntro14 = ["elSpa"];
+const phrase16 = ["phraseElYYo"];
 const wordIntro15 = ["ellaSpa"];
+const phrase17 = ["phraseEllaOElQuestion"];
 const wordIntro16 = ["estaSpa"];
+const phrase18 = ["phraseElEstaAlliPeroYoNoEstoyAlli"];
+const phrase19 = ["phraseEllaTambienEstaAqui"];
 const wordIntro17 = ["holaSpa"];
+const phrase20 = [
+  "phraseHolaElEstaAquiHolaNoElNoEstaAquiPeroEllaEstaAquiDialogue"
+];
 
 let superCount = 0;
 
@@ -39,6 +56,7 @@ let addAudioSevDivs;
 let addAudioThreeOptions1;
 let addAudioThreeOptions2;
 let shufflePhrase;
+let numAllWords;
 
 let wordForLoop;
 let correctAudio;
@@ -70,7 +88,8 @@ function changeIcon(event) {
 
   const phraseIsCorrect = document.getElementById("btn-check");
   phraseIsCorrect.onclick = function() {
-    spanishGerman.unitOne[wordForLoop][5][0].audio.play(); // sonido
+    if (superCount === numAllWords)
+      spanishGerman.unitOne[wordForLoop][5][0].audio.play(); // sonido
   };
 }
 
@@ -97,7 +116,7 @@ function createSeveralDivsIcon(words) {
   parentCorrectPhrase.innerHTML = contentCorrectPhrase;
 
   let changeIcons = document.getElementsByClassName("iconWord");
-  let numAllWords = changeIcons.length;
+  numAllWords = changeIcons.length;
   for (let i = 0; i < numAllWords; i++) {
     changeIcons[i].addEventListener("click", event => {
       let originId = event.currentTarget.id;
@@ -234,7 +253,22 @@ const configLesson = function(unit, wordIntro) {
     wordIntro === phrase2 ||
     wordIntro === phrase3 ||
     wordIntro === phrase4 ||
-    wordIntro === phrase5
+    wordIntro === phrase5 ||
+    wordIntro === phrase6 ||
+    wordIntro === phrase7 ||
+    wordIntro === phrase8 ||
+    wordIntro === phrase9 ||
+    wordIntro === phrase10 ||
+    wordIntro === phrase11 ||
+    wordIntro === phrase12 ||
+    wordIntro === phrase13 ||
+    wordIntro === phrase14 ||
+    wordIntro === phrase15 ||
+    wordIntro === phrase16 ||
+    wordIntro === phrase17 ||
+    wordIntro === phrase18 ||
+    wordIntro === phrase19 ||
+    wordIntro === phrase20
   ) {
     wordIntro.forEach(function(word) {
       wordForLoop = wordIntro;
@@ -314,23 +348,53 @@ function goToNextWord() {
   } else if (wordForLoop === phrase5) {
     return wordIntro8;
   } else if (wordForLoop === wordIntro8) {
+    return phrase6;
+  } else if (wordForLoop === phrase6) {
+    return phrase7;
+  } else if (wordForLoop === phrase7) {
+    return phrase8;
+  } else if (wordForLoop === phrase8) {
+    return phrase9;
+  } else if (wordForLoop === phrase9) {
     return wordIntro9;
   } else if (wordForLoop === wordIntro9) {
+    return phrase10;
+  } else if (wordForLoop === phrase10) {
     return wordIntro10;
   } else if (wordForLoop === wordIntro10) {
+    return phrase11;
+  } else if (wordForLoop === phrase11) {
     return wordIntro11;
   } else if (wordForLoop === wordIntro11) {
+    return phrase12;
+  } else if (wordForLoop === phrase12) {
     return wordIntro12;
   } else if (wordForLoop === wordIntro12) {
+    return phrase13;
+  } else if (wordForLoop === phrase13) {
+    return phrase14;
+  } else if (wordForLoop === phrase14) {
     return wordIntro13;
   } else if (wordForLoop === wordIntro13) {
+    return phrase15;
+  } else if (wordForLoop === phrase15) {
     return wordIntro14;
   } else if (wordForLoop === wordIntro14) {
+    return phrase16;
+  } else if (wordForLoop === phrase16) {
     return wordIntro15;
   } else if (wordForLoop === wordIntro15) {
+    return phrase17;
+  } else if (wordForLoop === phrase17) {
     return wordIntro16;
   } else if (wordForLoop === wordIntro16) {
+    return phrase18;
+  } else if (wordForLoop === phrase18) {
+    return phrase19;
+  } else if (wordForLoop === phrase19) {
     return wordIntro17;
+  } else if (wordForLoop === wordIntro17) {
+    return phrase20;
   }
 }
 
