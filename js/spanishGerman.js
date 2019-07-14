@@ -23,14 +23,16 @@ const spanishGerman = {
       ichGer,
       "Unidad 1, palabra 1 de 17",
       listenAudio.wordIntro.spanish,
-      listenAudio.threeOptionsAudios.spanish
+      listenAudio.threeOptionsAudios.spanish,
+      "Primer sonido: entre una [e] y una [i]. Segundo sonido: el sonido inglés [sh] con las comisuras de las boca con una apertura hacia los costados."
     ],
     estoySpa: [
       "estoy",
       binGer,
       "Unidad 1, palabra 2 de 17",
       listenAudio.wordIntro.spanish,
-      listenAudio.threeOptionsAudios.spanish
+      listenAudio.threeOptionsAudios.spanish,
+      "Primer sonido: una [b] fuerte. Segundo sonido: entre una [e] y una [i]. Tercer sonido: una [n] clara."
     ],
     aquiSpa: [
       "aquí",

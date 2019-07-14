@@ -59,7 +59,6 @@ let shufflePhrase;
 let numAllWords;
 
 let wordForLoop;
-let correctAudio;
 
 // pick a random audio
 function pickRandom() {
@@ -120,9 +119,9 @@ function createSeveralDivsIcon(words) {
   for (let i = 0; i < numAllWords; i++) {
     changeIcons[i].addEventListener("click", event => {
       let originId = event.currentTarget.id;
-      let ppp = spanishGerman.unitOne[wordForLoop][4][superCount].text;
+      let solutionID = spanishGerman.unitOne[wordForLoop][4][superCount].text;
 
-      if (originId === ppp) {
+      if (originId === solutionID) {
         changeIcon(event);
         superCount += 1;
       }
@@ -153,7 +152,6 @@ const configLesson = function(unit, wordIntro) {
   ) {
     wordIntro.forEach(function(word) {
       wordForLoop = wordIntro;
-      correctAudio = spanishGerman[unit][word][1].audio;
 
       // NOT show main check btn
       let hideShowMainCheck = document.querySelector("#btn-check");
@@ -162,6 +160,10 @@ const configLesson = function(unit, wordIntro) {
       // show task div
       let hideShowTaskDiv = document.querySelector(".task");
       hideShowTaskDiv.style.display = "block";
+
+      // show hints div
+      let hintsDivHideShow = document.querySelector(".hints");
+      hintsDivHideShow.style.display = "block";
 
       // shows div element
       document.querySelector(".target-language").style.display = "block";
@@ -247,6 +249,10 @@ const configLesson = function(unit, wordIntro) {
       audioOptionfield.forEach(function(singleSrc) {
         singleSrc.src = "./img/threeAudios.png";
       });
+
+      // show hints
+      let additionalInfo = document.getElementById("info-or-phrase");
+      additionalInfo.textContent = spanishGerman[unit][word][5];
     });
   } else if (
     wordIntro === phrase1 ||
@@ -418,6 +424,10 @@ nextWord.onclick = function() {
   // NOT show three buttons of audio options
   let hideShowTaskDiv = document.querySelector(".task");
   hideShowTaskDiv.style.display = "none";
+
+  // NOT show hints div
+  let hintsDivHideShow = document.querySelector(".hints");
+  hintsDivHideShow.style.display = "none";
 
   // NOT show title / task, choose correct audio
   let chooseAudio = document.getElementById("choose-correct-audio");
