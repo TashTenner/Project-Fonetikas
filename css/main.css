@@ -19,7 +19,7 @@ body {
 
 #start-page {
   /*background-color: aqua;*/
-  background-image: url("./../img/llama\ animal.jpg");
+  background-image: url("./../img/llama-animal-grey.jpg");
   background-size: cover;
   position: absolute;
   height: 100vh;
