@@ -23,7 +23,7 @@ const wordIntro11 = ["noSpaOne"];
 const phrase12 = ["phraseTuEstasAlliNoDialogue"];
 const wordIntro12 = ["noSpaTwo"];
 const phrase13 = ["phraseYoNoEstoyAqui"];
-const phrase14 = ["phraseTuNoEstasAlliQuestionQuestion"];
+const phrase14 = ["phraseTuNoEstasAlliQuestion"];
 const wordIntro13 = ["oSpa"];
 const phrase15 = ["phraseTuEstasAquiOTuEstasAlliQuestion"];
 const wordIntro14 = ["elSpa"];
@@ -204,25 +204,25 @@ const configLesson = function(unit, wordIntro) {
       };
 
       arrayThreeAudios = [
-        [addAudioThreeOptions1, "¡Inténtalo otra vez!"],
-        [addAudioThreeOptions2, "¡Inténtalo otra vez!"],
-        [addAudio, "¡Correcto!"]
+        [addAudioThreeOptions1, "UPS"],
+        [addAudioThreeOptions2, "UPS"],
+        [addAudio, "SÍ"]
       ];
       shuffle(arrayThreeAudios);
 
       // plays two incorrect audios
       linkPlayThreeOptionsA.addEventListener("click", arrayThreeAudios[0][0]);
       linkPlayThreeOptionsABtn.onclick = function() {
-        alert(arrayThreeAudios[0][1]);
+        linkPlayThreeOptionsABtn.textContent = arrayThreeAudios[0][1];
       };
       linkPlayThreeOptionsB.addEventListener("click", arrayThreeAudios[1][0]);
       linkPlayThreeOptionsBBtn.onclick = function() {
-        alert(arrayThreeAudios[1][1]);
+        linkPlayThreeOptionsBBtn.textContent = arrayThreeAudios[1][1];
       };
       // plays sound, three options, correct sound 3
       linkPlayThreeOptionsC.addEventListener("click", arrayThreeAudios[2][0]);
       linkPlayThreeOptionsCBtn.onclick = function() {
-        alert(arrayThreeAudios[2][1]);
+        linkPlayThreeOptionsCBtn.textContent = arrayThreeAudios[2][1];
       };
 
       // shows unit, word index
@@ -412,6 +412,10 @@ nextWord.onclick = function() {
   linkPlayThreeOptionsA.removeEventListener("click", arrayThreeAudios[0][0]);
   linkPlayThreeOptionsB.removeEventListener("click", arrayThreeAudios[1][0]);
   linkPlayThreeOptionsC.removeEventListener("click", arrayThreeAudios[2][0]);
+
+  linkPlayThreeOptionsABtn.textContent = "check";
+  linkPlayThreeOptionsBBtn.textContent = "check";
+  linkPlayThreeOptionsCBtn.textContent = "check";
 
   // NOT show =
   let showEqualSign = document.getElementById("equal-sign");

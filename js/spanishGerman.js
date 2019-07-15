@@ -211,7 +211,7 @@ const spanishGerman = {
       [ichGer, binGer, nichtGer, hierGer], //solution
       [ichBinNichtHier]
     ],
-    phraseTuNoEstasAlliQuestionQuestion: [
+    phraseTuNoEstasAlliQuestion: [
       listenAudio.createPhrase.spanish,
       "¿No estás allí? Sintaxis alemana: ¿Estás tú no(2) allí?",
       "Unidad 1, frase 14 de 20",
@@ -276,8 +276,8 @@ const spanishGerman = {
       "Él está allí pero yo no estoy allí. Sintaxis alemana: Él está allí pero yo estoy no(2) allí.",
       "Unidad 1, frase 18 de 20",
       [erGer, istGer, dortGer, aberGer, ichGer, binGer, nichtGer, dortGer],
-      [erGer, istGer, dortGer, aberGer, ichGer, binGer, nichtGer, dortGer] //solution
-      //audio complete phrase
+      [erGer, istGer, dortGer, aberGer, ichGer, binGer, nichtGer, dortGer], //solution
+      [erIstDortAberIchBinNichtDort]
     ],
     phraseEllaTambienEstaAqui: [
       listenAudio.createPhrase.spanish,
