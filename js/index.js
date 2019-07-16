@@ -102,7 +102,9 @@ function createSeveralDivsIcon(words) {
   words.forEach(function(word) {
     content += `
     <div class="target-language-phrase">
-      <img class="iconWord" id="${word.text}" src="${word.icon.src}"/>
+      <img class="iconWord box-shadow-phrase" id="${word.text}" src="${
+      word.icon.src
+    }"/>
     </div>
     `;
     contentCorrectPhrase += `

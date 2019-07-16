@@ -13,8 +13,25 @@
   <body>
     <!--LANDING PAGE-->
     <div id="start-page">
-      <div>
-        <button id="hide-start" onclick="">Alemán para hispanohablantes</button>
+      <div id="column-one">
+        <span
+          >¿Hablar un idioma como un nativo?<br />La llama llama
+          <b>FONETIKAS</b></span
+        >
+      </div>
+      <div id="column-two">
+        <button id="hide-start" onclick="">alemán para hispanohablantes</button>
+        <br />
+        <span>Pronto:</span>
+        <br />
+        <button class="disabled">hebreo para hispanohablantes</button>
+        <br />
+        <button class="disabled">inglés para hispanohablantes</button>
+        <br />
+        <button class="disabled">ruso para hispanohablantes</button>
+      </div>
+      <div id="column-three">
+        <img src="img/llama.png" alt="" />
       </div>
     </div>
     <!--PAUSE - REPETITION PAGE-->
@@ -44,12 +61,12 @@
         <!--words introduction-->
         <div class="words">
           <div class="base-language">
-            <span id="native-language"></span>
+            <span id="native-language" class="bold"></span>
           </div>
           <div class="equal">
             <span id="equal-sign"></span>
           </div>
-          <div class="target-language">
+          <div class="target-language box-shadow-word">
             <a href="#" id="play">
               <img id="icon-target-language" src=" " />
             </a>
@@ -70,17 +87,17 @@
             <span id="choose-correct-audio"></span>
           </div>
           <div class="options">
-            <div class="option-abc margin-l-r">
+            <div class="option-abc margin-l-r center">
               <a class="center" href="#">
                 <img id="sound-a" class="audio-sign" src=" " />
               </a>
             </div>
-            <div class="option-abc margin-l-r">
+            <div class="option-abc margin-l-r center">
               <a class="center" href="#"
                 ><img id="sound-b" class="audio-sign" src=" "
               /></a>
             </div>
-            <div class="option-abc margin-l-r">
+            <div class="option-abc margin-l-r center">
               <a class="center" href="#"
                 ><img id="sound-c" class="audio-sign" src=" "
               /></a>
