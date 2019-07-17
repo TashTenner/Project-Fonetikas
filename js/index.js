@@ -135,22 +135,6 @@ function createSeveralDivsIcon(words) {
   }
 }
 
-// onclick="${pic.audio.play()}"
-// onclick="test(${
-//   pic.audio
-// })"
-
-//  // plays sound, word introduction
-//  addAudio = function() {
-//   spanishGerman[unit][word][1].audio.play();
-// };
-// linkPlay.addEventListener("click", addAudio);
-// onclick="${pic.audio.play()}
-
-// test = function(pic) {
-//   pic.audio.play();
-// };
-
 // add icons to pause-page
 function addIconToPausePage(recapWords) {
   let totalIcons = "";
@@ -162,9 +146,6 @@ function addIconToPausePage(recapWords) {
     }" />
       </div>
     `;
-    // let playRecapWord = document.getElementById(`"${pic.text}"`);
-    // // playRecapWord.addEventListener("click", test(pic));
-    // console.log(playRecapWord);
   });
   pausePage.innerHTML = totalIcons;
 
@@ -372,29 +353,7 @@ const configLesson = function(unit, wordIntro) {
   }
 };
 
-// buttons
-const btnStart = document.getElementById("hide-start");
-btnStart.onclick = function() {
-  const landingDiv = document.getElementById("start-page");
-  landingDiv.style.visibility = "hidden";
-  // btnPrevWord.style.display = "none";
-  configLesson("unitOne", wordIntro1);
-};
-
-const btnPauseOn = document.getElementById("btn-pause");
-btnPauseOn.onclick = function() {
-  const pauseDiv = document.getElementById("pause-page");
-  pauseDiv.style.visibility = "visible";
-};
-
-const btnPauseOff = document.getElementById("hide-pause");
-btnPauseOff.onclick = function() {
-  const pauseDiv = document.getElementById("pause-page");
-  pauseDiv.style.visibility = "hidden";
-};
-
 // cons
-
 function goToPrevWord() {
   if (wordForLoop === phrase20) {
     return wordIntro17;
@@ -563,74 +522,3 @@ nextWord.onclick = function() {
   cleanPage();
   configLesson("unitOne", goToNextWord());
 };
-
-function cleanPage() {
-  linkPlay.removeEventListener("click", addAudio);
-
-  linkPlayThreeOptionsA.removeEventListener("click", arrayThreeAudios[0][0]);
-  linkPlayThreeOptionsB.removeEventListener("click", arrayThreeAudios[1][0]);
-  linkPlayThreeOptionsC.removeEventListener("click", arrayThreeAudios[2][0]);
-
-  linkPlayThreeOptionsABtn.textContent = "check";
-  linkPlayThreeOptionsBBtn.textContent = "check";
-  linkPlayThreeOptionsCBtn.textContent = "check";
-
-  // NOT show =
-  let showEqualSign = document.getElementById("equal-sign");
-  showEqualSign.textContent = "";
-
-  // NOT show icon of target language
-  let targetLanguage = document.getElementById("icon-target-language");
-  targetLanguage.setAttribute("src", "");
-
-  // NOT show three buttons of audio options
-  let hideShowTaskDiv = document.querySelector(".task");
-  hideShowTaskDiv.style.display = "none";
-
-  // NOT show hints div
-  let hintsDivHideShow = document.querySelector(".hints");
-  hintsDivHideShow.style.display = "none";
-
-  // NOT show title / task, choose correct audio
-  let chooseAudio = document.getElementById("choose-correct-audio");
-  chooseAudio.textContent = "";
-
-  // NOT show title / task, what to do
-  let imperativePhrase = document.getElementById("imperative-title");
-  imperativePhrase.textContent = "";
-
-  // NOT write the Spanish phrase
-  let natLanguage = document.getElementById("native-language");
-  natLanguage.textContent = "";
-
-  // NOT shows unit, word index
-  let unitWordCount = document.getElementById("index-unit");
-  unitWordCount.textContent = "";
-
-  // delete createSeveralDivsIcon();
-
-  // NOT show icon of target language
-  const deleteChildNodes = document.getElementsByClassName("several-words")[0];
-
-  if (deleteChildNodes.firstChild) {
-    while (deleteChildNodes.firstChild) {
-      deleteChildNodes.removeChild(deleteChildNodes.firstChild);
-    }
-  }
-
-  // NOT show white-placeholder
-  const deleteChildNodesCorrectPhrase = document.getElementsByClassName(
-    "correct-phrase"
-  )[0];
-
-  if (deleteChildNodesCorrectPhrase.firstChild) {
-    while (deleteChildNodesCorrectPhrase.firstChild) {
-      deleteChildNodesCorrectPhrase.removeChild(
-        deleteChildNodesCorrectPhrase.firstChild
-      );
-    }
-  }
-
-  document.querySelector(".target-language").style.display = "none";
-  superCount = 0;
-}

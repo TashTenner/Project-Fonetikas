@@ -1,0 +1,19 @@
+audioHeb = [
+  ichGer,
+  binGer,
+  hierGer,
+  dortGer,
+  duGer,
+  bistGer,
+  undGer,
+  auchGer,
+  aberGer,
+  jaGer,
+  neinGer,
+  nichtGer,
+  oderGer,
+  erGer,
+  sieGer,
+  istGer,
+  halloGer
+];

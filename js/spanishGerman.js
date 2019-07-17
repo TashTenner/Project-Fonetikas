@@ -2,20 +2,6 @@
 load object spanishGerman 
 */
 
-const listenAudio = {
-  wordIntro: {
-    spanish: "¡Haz click en el ícono para escuchar el audio!",
-    english: "click here",
-    german: "click hier"
-  },
-  threeOptionsAudios: {
-    spanish: "La llama llama tres audios. ¿Cuál es la correcta?"
-  },
-  createPhrase: {
-    spanish: "¿Cómo se crea la frase?"
-  }
-};
-
 const spanishGerman = {
   unitOne: {
     yoSpa: [
@@ -24,7 +10,7 @@ const spanishGerman = {
       "Unidad 1, palabra 1 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish,
-      "Primer sonido: entre una [e] y una [i]. Segundo sonido: el sonido inglés [sh] con las comisuras de las boca con una apertura hacia los costados."
+      "Primer sonido: entre [e] - [i]. Segundo sonido: el sonido inglés [sh] con las comisuras de las boca con una apertura hacia los costados."
     ],
     estoySpa: [
       "estoy",
@@ -32,14 +18,15 @@ const spanishGerman = {
       "Unidad 1, palabra 2 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish,
-      "Primer sonido: una [b] fuerte. Segundo sonido: entre una [e] y una [i]. Tercer sonido: una [n] clara."
+      "Primer sonido: [b] fuerte. Segundo sonido: entre [e] - [i]. Tercer sonido: [n] clara."
     ],
     aquiSpa: [
       "aquí",
       hierGer,
       "Unidad 1, palabra 3 de 17",
       listenAudio.wordIntro.spanish,
-      listenAudio.threeOptionsAudios.spanish
+      listenAudio.threeOptionsAudios.spanish,
+      "Primer sonido: expulsar aire. Segundo sonido: [i] alargada. Tercer sonido: [a] corta y rápida."
     ],
     phraseYoEstoyAqui: [
       listenAudio.createPhrase.spanish,
@@ -54,7 +41,8 @@ const spanishGerman = {
       dortGer,
       "Unidad 1, palabra 4 de 17",
       listenAudio.wordIntro.spanish,
-      listenAudio.threeOptionsAudios.spanish
+      listenAudio.threeOptionsAudios.spanish,
+      "Primer sonido: [d] fuerte. Tercer sonido: [a] corta y rápida. Cuarto sonido: [t] clara."
     ],
     phraseYoEstoyAlli: [
       listenAudio.createPhrase.spanish,
@@ -69,7 +57,8 @@ const spanishGerman = {
       duGer,
       "Unidad 1, palabra 5 de 17",
       listenAudio.wordIntro.spanish,
-      listenAudio.threeOptionsAudios.spanish
+      listenAudio.threeOptionsAudios.spanish,
+      "Primer sonido: [d] clara y fuerte. Segundo sonido: [u] larga."
     ],
     estasSpa: [
       "estás",
