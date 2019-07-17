@@ -51,6 +51,7 @@ const linkPlayThreeOptionsABtn = document.getElementById("btn-check-a");
 const linkPlayThreeOptionsBBtn = document.getElementById("btn-check-b");
 const linkPlayThreeOptionsCBtn = document.getElementById("btn-check-c");
 const pausePage = document.getElementById("recap-words");
+const btnPrevWord = document.getElementById("prev-word");
 
 let addAudio;
 let addAudioSevDivs;
@@ -366,6 +367,7 @@ const btnStart = document.getElementById("hide-start");
 btnStart.onclick = function() {
   const landingDiv = document.getElementById("start-page");
   landingDiv.style.visibility = "hidden";
+  // btnPrevWord.style.display = "none";
   configLesson("unitOne", wordIntro1);
 };
 
@@ -382,6 +384,84 @@ btnPauseOff.onclick = function() {
 };
 
 // cons
+
+function goToPrevWord() {
+  if (wordForLoop === phrase20) {
+    return wordIntro17;
+  } else if (wordForLoop === wordIntro17) {
+    return phrase19;
+  } else if (wordForLoop === phrase19) {
+    return phrase18;
+  } else if (wordForLoop === phrase18) {
+    return wordIntro16;
+  } else if (wordForLoop === wordIntro16) {
+    return phrase17;
+  } else if (wordForLoop === phrase17) {
+    return wordIntro15;
+  } else if (wordForLoop === wordIntro15) {
+    return phrase16;
+  } else if (wordForLoop === phrase16) {
+    return wordIntro14;
+  } else if (wordForLoop === wordIntro14) {
+    return phrase15;
+  } else if (wordForLoop === phrase15) {
+    return wordIntro13;
+  } else if (wordForLoop === wordIntro13) {
+    return phrase14;
+  } else if (wordForLoop === phrase14) {
+    return phrase13;
+  } else if (wordForLoop === phrase13) {
+    return wordIntro12;
+  } else if (wordForLoop === wordIntro12) {
+    return phrase12;
+  } else if (wordForLoop === phrase12) {
+    return wordIntro11;
+  } else if (wordForLoop === wordIntro11) {
+    return phrase11;
+  } else if (wordForLoop === phrase11) {
+    return wordIntro10;
+  } else if (wordForLoop === wordIntro10) {
+    return phrase10;
+  } else if (wordForLoop === phrase10) {
+    return wordIntro9;
+  } else if (wordForLoop === wordIntro9) {
+    return phrase9;
+  } else if (wordForLoop === phrase9) {
+    return phrase8;
+  } else if (wordForLoop === phrase8) {
+    return phrase7;
+  } else if (wordForLoop === phrase7) {
+    return phrase6;
+  } else if (wordForLoop === phrase6) {
+    return wordIntro8;
+  } else if (wordForLoop === wordIntro8) {
+    return phrase5;
+  } else if (wordForLoop === phrase5) {
+    return wordIntro7;
+  } else if (wordForLoop === wordIntro7) {
+    return phrase4;
+  } else if (wordForLoop === phrase4) {
+    return phrase3;
+  } else if (wordForLoop === phrase3) {
+    return wordIntro6;
+  } else if (wordForLoop === wordIntro6) {
+    return wordIntro5;
+  } else if (wordForLoop === wordIntro5) {
+    return phrase2;
+  } else if (wordForLoop === phrase2) {
+    return wordIntro4;
+  } else if (wordForLoop === wordIntro4) {
+    return phrase1;
+  } else if (wordForLoop === phrase1) {
+    return wordIntro3;
+  } else if (wordForLoop === wordIntro3) {
+    return wordIntro2;
+  } else if (wordForLoop === wordIntro2) {
+    return wordIntro1;
+  } else if (wordForLoop === wordIntro1) {
+    return wordIntro1;
+  }
+}
 
 function goToNextWord() {
   if (wordForLoop === wordIntro1) {
@@ -456,12 +536,25 @@ function goToNextWord() {
     return wordIntro17;
   } else if (wordForLoop === wordIntro17) {
     return phrase20;
+  } else if (wordForLoop === phrase20) {
+    return phrase20;
   }
 }
 
+const prevWord = document.getElementById("prev-word");
 const nextWord = document.getElementById("next-word");
 
+prevWord.onclick = function() {
+  cleanPage();
+  configLesson("unitOne", goToPrevWord());
+};
+
 nextWord.onclick = function() {
+  cleanPage();
+  configLesson("unitOne", goToNextWord());
+};
+
+function cleanPage() {
   linkPlay.removeEventListener("click", addAudio);
 
   linkPlayThreeOptionsA.removeEventListener("click", arrayThreeAudios[0][0]);
@@ -530,6 +623,4 @@ nextWord.onclick = function() {
 
   document.querySelector(".target-language").style.display = "none";
   superCount = 0;
-
-  configLesson("unitOne", goToNextWord());
-};
+}
