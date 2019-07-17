@@ -50,6 +50,7 @@ const linkPlayThreeOptionsC = document.getElementById("sound-c");
 const linkPlayThreeOptionsABtn = document.getElementById("btn-check-a");
 const linkPlayThreeOptionsBBtn = document.getElementById("btn-check-b");
 const linkPlayThreeOptionsCBtn = document.getElementById("btn-check-c");
+const pausePage = document.getElementById("recap-words");
 
 let addAudio;
 let addAudioSevDivs;
@@ -57,6 +58,7 @@ let addAudioThreeOptions1;
 let addAudioThreeOptions2;
 let shufflePhrase;
 let numAllWords;
+let numAllIcons;
 
 let wordForLoop;
 
@@ -67,6 +69,7 @@ function pickRandom() {
 }
 
 let arrayThreeAudios = [];
+let recapWords = [];
 
 // shuffle
 function shuffle(array) {
@@ -131,6 +134,48 @@ function createSeveralDivsIcon(words) {
   }
 }
 
+// onclick="${pic.audio.play()}"
+// onclick="test(${
+//   pic.audio
+// })"
+
+//  // plays sound, word introduction
+//  addAudio = function() {
+//   spanishGerman[unit][word][1].audio.play();
+// };
+// linkPlay.addEventListener("click", addAudio);
+// onclick="${pic.audio.play()}
+
+// test = function(pic) {
+//   pic.audio.play();
+// };
+
+// add icons to pause-page
+function addIconToPausePage(recapWords) {
+  let totalIcons = "";
+  recapWords.forEach(function(pic) {
+    totalIcons += `
+      <div class="target-language-phrase20">
+        <img class="test box-shadow-phrase" src="${pic.icon.src}" id="${
+      pic.text
+    }" />
+      </div>
+    `;
+    // let playRecapWord = document.getElementById(`"${pic.text}"`);
+    // // playRecapWord.addEventListener("click", test(pic));
+    // console.log(playRecapWord);
+  });
+  pausePage.innerHTML = totalIcons;
+
+  let playRecapWord = document.getElementsByClassName("test");
+  numAllIcons = playRecapWord.length;
+  for (let k = 0; k < numAllIcons; k++) {
+    playRecapWord[k].addEventListener("click", event => {
+      let recapIconId = event.currentTarget.id;
+      console.log(recapIconId);
+    });
+  }
+}
 // configLesson(stepOne);
 const configLesson = function(unit, wordIntro) {
   if (
@@ -249,12 +294,16 @@ const configLesson = function(unit, wordIntro) {
       // shows three img of 1 correct audio, 2
       let audioOptionfield = document.querySelectorAll(".audio-sign");
       audioOptionfield.forEach(function(singleSrc) {
-        singleSrc.src = "./img/threeAudios.png";
+        singleSrc.src = "./img/llama.png";
       });
 
       // show hints
       let additionalInfo = document.getElementById("info-or-phrase");
       additionalInfo.textContent = spanishGerman[unit][word][5];
+
+      // add word to recap-list pause-page
+      recapWords.push(spanishGerman[unit][word][1]);
+      addIconToPausePage(recapWords);
     });
   } else if (
     wordIntro === phrase1 ||
