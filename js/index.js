@@ -172,7 +172,11 @@ function addIconToPausePage(recapWords) {
   for (let k = 0; k < numAllIcons; k++) {
     playRecapWord[k].addEventListener("click", event => {
       let recapIconId = event.currentTarget.id;
-      console.log(recapIconId);
+      audioGer.forEach(function(word) {
+        if (word.text === recapIconId) {
+          word.audio.play();
+        }
+      });
     });
   }
 }
