@@ -307,6 +307,16 @@ const configLesson = function(unit, wordIntro) {
       additionalInfo.textContent = spanishGerman[unit][word][5];
 
       // add word to recap-list pause-page
+      let addWord = spanishGerman[unit][word][1];
+      recapWords.forEach(function(e) {
+        if (e.text === addWord.text) {
+          for (var i = 0; i < recapWords.length; i++) {
+            if (recapWords[i] === addWord) {
+              recapWords.splice(i, 1);
+            }
+          }
+        }
+      });
       recapWords.push(spanishGerman[unit][word][1]);
       addIconToPausePage(recapWords);
     });
