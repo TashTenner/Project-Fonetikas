@@ -58,14 +58,15 @@ const spanishGerman = {
       "Unidad 1, palabra 5 de 17",
       listenAudio.wordIntro.spanish,
       listenAudio.threeOptionsAudios.spanish,
-      "Primer sonido: [d] clara y fuerte. Segundo sonido: [u] larga."
+      "Primer sonido: [d] clara y fuerte. Segundo sonido: [u] alargada."
     ],
     estasSpa: [
       "estás",
       bistGer,
       "Unidad 1, palabra 6 de 17",
       listenAudio.wordIntro.spanish,
-      listenAudio.threeOptionsAudios.spanish
+      listenAudio.threeOptionsAudios.spanish,
+      "Primer sonido: [b] clara y fuerte. Segundo sonido: entre [e] - [i]. Cuarto sonido: [t] clara."
     ],
     phraseTuEstasAqui: [
       listenAudio.createPhrase.spanish,
@@ -88,7 +89,8 @@ const spanishGerman = {
       undGer,
       "Unidad 1, palabra 7 de 17",
       listenAudio.wordIntro.spanish,
-      listenAudio.threeOptionsAudios.spanish
+      listenAudio.threeOptionsAudios.spanish,
+      "Primer sonido: [u] clara. Tercer sonido: [t] clara."
     ],
     phraseYoEstoyAquiYtuEstasAlli: [
       listenAudio.createPhrase.spanish,
@@ -103,7 +105,8 @@ const spanishGerman = {
       auchGer,
       "Unidad 1, palabra 8 de 17",
       listenAudio.wordIntro.spanish,
-      listenAudio.threeOptionsAudios.spanish
+      listenAudio.threeOptionsAudios.spanish,
+      "Fácil de pronunciar. :)"
     ],
     phraseYoTambienEstoyAqui: [
       listenAudio.createPhrase.spanish,
@@ -145,7 +148,8 @@ const spanishGerman = {
       aberGer,
       "Unidad 1, palabra 9 de 17",
       listenAudio.wordIntro.spanish,
-      listenAudio.threeOptionsAudios.spanish
+      listenAudio.threeOptionsAudios.spanish,
+      "Primer sonido: [a] alargada. Segundo sonido: [b] clara. Tercer sonido: [a] rápida."
     ],
     phraseYoEstoyAquiPeroTuEstasAlli: [
       listenAudio.createPhrase.spanish,
@@ -160,7 +164,8 @@ const spanishGerman = {
       jaGer,
       "Unidad 1, palabra 10 de 17",
       listenAudio.wordIntro.spanish,
-      listenAudio.threeOptionsAudios.spanish
+      listenAudio.threeOptionsAudios.spanish,
+      "Como el final de: Ella podía. >> [ía]"
     ],
     phraseTuEstasAquiSiYoEstoyAquiDialogue: [
       listenAudio.createPhrase.spanish,
@@ -175,7 +180,8 @@ const spanishGerman = {
       neinGer,
       "Unidad 1, palabra 11 de 17",
       listenAudio.wordIntro.spanish,
-      listenAudio.threeOptionsAudios.spanish
+      listenAudio.threeOptionsAudios.spanish,
+      "Primer sonido: [n] clara y fuerte. Segundo sonido: [a]. Tercer sonido: [i]. Cuarto sonido: [n] clara."
     ],
     phraseTuEstasAlliNoDialogue: [
       listenAudio.createPhrase.spanish,
@@ -190,7 +196,8 @@ const spanishGerman = {
       nichtGer,
       "Unidad 1, palabra 12 de 17",
       listenAudio.wordIntro.spanish,
-      listenAudio.threeOptionsAudios.spanish
+      listenAudio.threeOptionsAudios.spanish,
+      "Primer sonido: [n] clara y fuerte. Segundo sonido: entre [e] - [i]. Tercer sonido: el sonido inglés [sh] con las comisuras de las boca con una apertura hacia los costados. Cuarto sonido: [t] clara."
     ],
     phraseYoNoEstoyAqui: [
       listenAudio.createPhrase.spanish,
@@ -213,7 +220,8 @@ const spanishGerman = {
       oderGer,
       "Unidad 1, palabra 13 de 17",
       listenAudio.wordIntro.spanish,
-      listenAudio.threeOptionsAudios.spanish
+      listenAudio.threeOptionsAudios.spanish,
+      "Primer sonido: [o] alargada. Segundo sonido: [d] clara y fuerte. Tercer sonido: [i]. Tercer sonido: [a] rápida."
     ],
     phraseTuEstasAquiOTuEstasAlliQuestion: [
       listenAudio.createPhrase.spanish,
@@ -228,7 +236,8 @@ const spanishGerman = {
       erGer,
       "Unidad 1, palabra 14 de 17",
       listenAudio.wordIntro.spanish,
-      listenAudio.threeOptionsAudios.spanish
+      listenAudio.threeOptionsAudios.spanish,
+      "Primer sonido: [e] alargada. Segundo sonido: [a] rápida."
     ],
     phraseElYYo: [
       listenAudio.createPhrase.spanish,
@@ -243,7 +252,8 @@ const spanishGerman = {
       sieGer,
       "Unidad 1, palabra 15 de 17",
       listenAudio.wordIntro.spanish,
-      listenAudio.threeOptionsAudios.spanish
+      listenAudio.threeOptionsAudios.spanish,
+      "Primer sonido: [s] con las cuerdas vocales vibrantes. Segundo sonido: [i] alargada."
     ],
     phraseEllaOElQuestion: [
       listenAudio.createPhrase.spanish,
@@ -258,7 +268,8 @@ const spanishGerman = {
       istGer,
       "Unidad 1, palabra 16 de 17",
       listenAudio.wordIntro.spanish,
-      listenAudio.threeOptionsAudios.spanish
+      listenAudio.threeOptionsAudios.spanish,
+      "Primer sonido: entre [e] - [i]. Tercer sonido: [t] clara."
     ],
     phraseElEstaAlliPeroYoNoEstoyAlli: [
       listenAudio.createPhrase.spanish,
@@ -281,7 +292,8 @@ const spanishGerman = {
       halloGer,
       "Unidad 1, palabra 17 de 17",
       listenAudio.wordIntro.spanish,
-      listenAudio.threeOptionsAudios.spanish
+      listenAudio.threeOptionsAudios.spanish,
+      "Primer sonido: expulsar aire. Tercer sonido: [l] alargada."
     ],
     phraseHolaElEstaAquiHolaNoElNoEstaAquiPeroEllaEstaAquiDialogue: [
       listenAudio.createPhrase.spanish,

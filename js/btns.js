@@ -4,6 +4,7 @@ btnStartGer.onclick = function() {
   const landingDiv = document.getElementById("start-page");
   landingDiv.style.visibility = "hidden";
   configLesson("unitOne", wordIntro1);
+  console.log("אני");
 };
 
 const btnStartHeb = document.getElementById("hide-start-heb");
