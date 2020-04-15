@@ -4,7 +4,7 @@ Fonetikas
 
 ## Description
 
-Learn a foreign language from zero based on innate pronounciation and grammar rules of your mother tongue.
+Learn a foreign language from zero based on innate pronunciation and grammar rules of your mother tongue.
 
 ## MVP (DOM)
 
